@@ -1,0 +1,82 @@
+<div class="task-input">
+
+    <h5>Edit & Submit Task</h5>
+
+  <form (ngSubmit)="taskFinished()">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Task Name</label>
+      </div>
+      <input
+        [(ngModel)]="name"
+        name="name"
+        type="text"
+        class="form-control"
+        value="{{activeTask.name}}"
+        placeholder="{{activeTask.name}}"
+        aria-label=""
+        aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Duration (mins)</label>
+      </div>
+      <input
+        [(ngModel)]="duration"
+        name="duration"
+        type="number"
+        class="form-control"
+        placeholder="{{activeTask.duration}}"
+        value="{{activeTask.duration}}"
+        aria-label=""
+        aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Labels</label>
+      </div>
+      <select
+        [(ngModel)]="label"
+        name="label"
+        class="custom-select"
+        id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="1">Label 1</option>
+        <option value="2">Label 2</option>
+        <option value="3">Label 3</option>
+      </select>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Start Time</label>
+      </div>
+      <p-calendar
+        styleClass="form-control calendar"
+        [(ngModel)]="start_time"
+        name="start_time"
+        [showTime]="true"
+        [showButtonBar]="true"
+        placeholder="{{activeTask.start_time}}"
+      ></p-calendar>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">End Time</label>
+      </div>
+      <p-calendar
+        styleClass="form-control calendar"
+        [(ngModel)]="end_time"
+        name="end_time"
+        [showTime]="true"
+        [showButtonBar]="true"
+        placeholder="{{activeTask.end_time}}"
+      ></p-calendar>
+    </div>
+
+    <button type="submit" class="btn btn-dark btn-lg">Complete Task</button>
+  </form>
+</div>

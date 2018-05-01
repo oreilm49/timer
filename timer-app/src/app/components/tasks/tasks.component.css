@@ -1,0 +1,20 @@
+.task-component {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 25% 25% 50%;
+  text-align: center;
+  width: 100%;
+  padding-right: 25%;
+  padding-left: 25%;
+}
+
+h4 {
+  padding-top: 50px;
+}
+
+
+
+
+
+
+

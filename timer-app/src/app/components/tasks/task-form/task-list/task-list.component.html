@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col">{{listItem.name}}</div>
+  <div class="col conceal" #taskId>{{listItem._id}}</div>
+  <div class="col">{{listItem.start_time}}</div>
+  <div class="col">{{listItem.duration}}</div>
+  <div class="col">
+    <button type="button" class="btn btn-success" [ngbPopover]="popOver" container="body"><i class="fas fa-check-circle"></i></button>
+    <button type="button" class="btn btn-danger" (click)="deleteTask(i)"><i class="fas fa-times-circle"></i></button>
+  </div>
+</div>
+
+<ng-template class="task-popover" #popOver >
+  <app-task-popover [activeTask]="listItem" (closePop)="popOver.close()" (completeTask)="emitComplete($event)"></app-task-popover>
+</ng-template>

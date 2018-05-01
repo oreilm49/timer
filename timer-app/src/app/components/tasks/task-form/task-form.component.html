@@ -1,0 +1,54 @@
+<div class="task-input">
+  <form (ngSubmit)="onTaskSubmit()">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Task Name</label>
+      </div>
+      <input [(ngModel)]="name" name="name" type="text" class="form-control" placeholder="" aria-label=""
+             aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Duration (mins)</label>
+      </div>
+      <input [(ngModel)]="duration" name="duration" type="number" class="form-control" placeholder="" aria-label=""
+             aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Labels</label>
+      </div>
+      <select [(ngModel)]="label" name="label" class="custom-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="1">Label 1</option>
+        <option value="2">Label 2</option>
+        <option value="3">Label 3</option>
+      </select>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Start Time</label>
+      </div>
+      <p-calendar styleClass="form-control calendar" [(ngModel)]="start_time" name="start_time" [showTime]="true"
+                  [showButtonBar]="true"></p-calendar>
+    </div>
+    <button type="submit" class="btn btn-dark btn-lg">Create Task</button>
+  </form>
+</div>
+
+<div class="list-group taskList">
+  <div class="list-group-item bg-light">
+    <div class="row">
+      <div class="col">Name</div>
+      <div class="col">Start Time</div>
+      <div class="col">Duration</div>
+      <div class="col">Update</div>
+    </div>
+  </div>
+    <app-task-list class="list-group-item" *ngFor="let task of tasks; let i = index" [listItem]="task" (removeTask)="deleteTaskFromList(task)" ></app-task-list>
+</div>
+
+

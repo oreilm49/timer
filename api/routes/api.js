@@ -13,9 +13,17 @@ router.post('/', function (req, res, next) {
 });
 
 // get tasks by userid
+router.get('/task/user/:user', function (req, res, next) {
+    let user = req.params.user;
+    model.taskById(user, function (result) {
+        res.send(result)
+    })
+});
+
+// get task by id
 router.get('/task/id/:id', function (req, res, next) {
     let id = req.params.id;
-    model.taskById(id, function (result) {
+    model.taskBy_Id(id, function (result) {
         res.send(result)
     })
 });
@@ -43,6 +51,7 @@ router.get('/task/project/:project', function (req, res, next) {
 // create new task
 router.post('/task/create', function (req, res, next) {
     let task = {
+        user: req.body.user,
         name: req.body.name,
         duration: req.body.duration,
         start_time: req.body.start_time,
@@ -60,8 +69,9 @@ router.post('/task/create', function (req, res, next) {
 // create new label
 router.post('/label/create', function (req, res, next) {
     let label = {
+        user: req.body.user,
         name: req.body.name,
-        tasks: req.body.tasks,
+        task: req.body.task
     };
     model.createLabel(label, function (err, createdLabel) {
         if (err) {
@@ -72,18 +82,43 @@ router.post('/label/create', function (req, res, next) {
     })
 });
 
+// get all labels
+router.get('/labels/get/:user', function (req, res, next) {
+    let user = req.params.user;
+    model.labelsById(user, function (result) {
+        res.send(result)
+    })
+});
+
 // create new Project
 router.post('/project/create', function (req, res, next) {
-    let label = {
+    let project = {
+        user: req.body.user,
         name: req.body.name,
-        tasks: req.body.tasks,
+        task: req.body.task
     };
-    model.createProject(label, function (err, createdProject) {
+    model.createProject(project, function (err, createdProject) {
         if (err) {
             console.log(err);
             res.send(err);
         }
         res.json(createdProject)
+    })
+});
+
+// Delete task by Id
+router.get('/task/delete/:id', function (req, res, next) {
+   let id = req.params.id;
+    model.deleteTaskById(id, function (result) {
+        res.send(result)
+    })
+});
+
+// Update task by Id
+router.post('/task/update/', function (req, res, next) {
+    let task = req.body;
+    model.updateTask(task, function (result) {
+        res.send(result)
     })
 });
 

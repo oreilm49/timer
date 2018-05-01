@@ -1,0 +1,7 @@
+.main-nav {
+  padding-left: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5% 5% 5% 5% 5% auto;
+  grid-row: 1 / span 1;
+}
