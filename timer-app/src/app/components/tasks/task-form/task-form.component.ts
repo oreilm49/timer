@@ -13,6 +13,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 export class TaskFormComponent implements OnInit {
   tasks: TaskObject[];
+  labels: LabelObject[];
 
   //calendar specific variables
   userId = '1';
@@ -71,6 +72,7 @@ export class TaskFormComponent implements OnInit {
     invalidDate.setDate(today.getDate() - 1);
     this.invalidDates = [today, invalidDate];
     this.getTasks();
+    this.getLabels();
   }
 
   onTaskSubmit() {
@@ -82,11 +84,6 @@ export class TaskFormComponent implements OnInit {
       end_time: this.end_time
     };
 
-    const label: LabelObject = {
-      user: this.userId,
-      name: this.label,
-      task: this.name
-    };
     // Required Fields
     if (!this.validatorService.validateTask(task)) {
       this.flashMessagesService.show('Please update all fields', {cssClass: 'alert-danger', timeout: 3000})
@@ -104,14 +101,6 @@ export class TaskFormComponent implements OnInit {
           response => {
             console.log("POST call in error", response);
           });
-      if (this.label) {
-        this.labelService.addLabel(label).subscribe((val) => {
-            console.log("label created: "+val.name);
-          },
-          response => {
-            console.log("POST call in error", response);
-          });
-      }
     }
   }
   getTasks() {
@@ -120,6 +109,14 @@ export class TaskFormComponent implements OnInit {
         (data: TaskObject) => this.tasks = data as any,
         response => {
           console.log("Error getting tasks: ", response);
+        });
+  }
+  getLabels() {
+    this.labelService.getAllLabels('1')
+      .subscribe(
+        (data: LabelObject) => this.labels = data as any,
+        response => {
+          console.log("Error getting labels: ", response);
         });
   }
   deleteTaskFromList(task): void {

@@ -66,12 +66,6 @@ export class TaskPopoverComponent implements OnInit {
       end_time: this.end_time
     };
 
-    const label: LabelObject = {
-      user: this.userId,
-      name: this.label,
-      task: this.name
-    };
-
     // Required Fields
     if (!this.validatorService.validateTaskComplete(task)) {
       this.flashMessagesService.show('Please update task end time', {cssClass: 'alert-danger', timeout: 3000})
@@ -97,14 +91,6 @@ export class TaskPopoverComponent implements OnInit {
           response => {
             console.log("POST call in error", response);
           });
-      if (this.label) {
-        this.labelService.addLabel(label).subscribe((val) => {
-            console.log("label created: "+val.name);
-          },
-          response => {
-            console.log("POST call in error", response);
-          });
-      }
     }
   }
 

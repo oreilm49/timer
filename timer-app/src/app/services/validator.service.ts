@@ -22,6 +22,6 @@ export class ValidatorService {
     }
   };
   validateLabel(label: LabelObject) {
-    return !(label.name == undefined || label.task == undefined)
+    return !(label.name == undefined || label.tasks == undefined)
   };
 }

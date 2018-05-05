@@ -62,7 +62,7 @@ router.post('/task/create', function (req, res, next) {
             console.log(err);
             res.send(err);
         }
-        res.json(createdTask)
+        // res.json(createdTask)
     })
 });
 
@@ -71,7 +71,6 @@ router.post('/label/create', function (req, res, next) {
     let label = {
         user: req.body.user,
         name: req.body.name,
-        task: req.body.task
     };
     model.createLabel(label, function (err, createdLabel) {
         if (err) {
@@ -82,8 +81,22 @@ router.post('/label/create', function (req, res, next) {
     })
 });
 
+// add task to label
+router.post('/label/add', function (req, res, next) {
+    let labels = req.body.labels;
+    let task = req.body.task;
+    model.addLabelToTask(task, labels, function (err, createdLabel) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        } else {
+            res.json(createdLabel)
+        }
+    })
+});
+
 // get all labels
-router.get('/labels/get/:user', function (req, res, next) {
+router.get('/labels/:user', function (req, res, next) {
     let user = req.params.user;
     model.labelsById(user, function (result) {
         res.send(result)
@@ -108,7 +121,7 @@ router.post('/project/create', function (req, res, next) {
 
 // Delete task by Id
 router.get('/task/delete/:id', function (req, res, next) {
-   let id = req.params.id;
+    let id = req.params.id;
     model.deleteTaskById(id, function (result) {
         res.send(result)
     })

@@ -1,4 +1,6 @@
 const db = require('../config/db');
+const echasync = require('echasync');
+
 
 const taskById = function (user, callback) {
     db.tasksModel.find({'user': user}, function (err, tasks) {
@@ -50,6 +52,30 @@ const createLabel = function (label, callback) {
         });
 };
 
+const addLabelToTask = function (task, labels, callback) {
+    let output = [];
+    echasync.do(labels, function (nextFile, label) {
+            db.labelModel.findByIdAndUpdate(
+                label,
+                {
+                    "$push": {tasks: task}
+                },
+                function (err, label) {
+                    if (err) throw err;
+                    if (label) {
+                        output.push(label);
+                        nextFile();
+                    } else {
+                        nextFile();
+                    }
+                }
+            )
+        }, function () {
+            callback(output);
+        }
+    )
+};
+
 const labelsById = function (user, callback) {
     db.labelModel.find({'user': user}, function (err, labels) {
         if (err) {
@@ -71,7 +97,7 @@ const createProject = function (project, callback) {
 };
 
 const deleteTaskById = function (id, callback) {
-    db.tasksModel.findByIdAndRemove(id, function(err, task) {
+    db.tasksModel.findByIdAndRemove(id, function (err, task) {
         if (err) {
             callback(err)
         }
@@ -80,7 +106,7 @@ const deleteTaskById = function (id, callback) {
 };
 
 const taskBy_Id = function (id, callback) {
-    db.tasksModel.findById({_id: id}, function(err, task) {
+    db.tasksModel.findById({_id: id}, function (err, task) {
         if (err) {
             callback(err)
         }
@@ -97,13 +123,14 @@ const updateTask = function (task, callback) {
                 duration: task.duration,
                 start_time: task.start_time,
                 end_time: task.end_time
-            }},
-        function(err, task) {
-        if (err) {
-            callback(err)
-        }
-        callback(task)
-    })
+            }
+        },
+        function (err, task) {
+            if (err) {
+                callback(err)
+            }
+            callback(task)
+        })
 };
 
 
@@ -117,5 +144,6 @@ module.exports = {
     createProject,
     deleteTaskById,
     taskBy_Id,
-    updateTask
+    updateTask,
+    addLabelToTask
 };

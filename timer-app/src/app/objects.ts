@@ -18,7 +18,8 @@ export class CompletedTask {
 export class LabelObject{
   user: string;
   name: string;
-  task: string;
+  id: string;
+  tasks: string[];
 }
 
 export class ProjectObject {
