@@ -2,8 +2,8 @@ export class TaskObject {
   public user: string;
   public name: string;
   public duration: number;
-  public start_time: Date;
-  public end_time: Date;
+  public start_time: number;
+  public end_time: number;
 }
 
 export class CompletedTask {
@@ -11,14 +11,26 @@ export class CompletedTask {
   public _id: string;
   public name: string;
   public duration: number;
-  public start_time: Date;
-  public end_time: Date;
+  public start_time: number;
+  public end_time: number;
+}
+
+export class NewLabelObject{
+  user: string;
+  name: string;
+}
+
+export class ReturnedLabelObject{
+  user: string;
+  name: string;
+  _id: string;
+  tasks: string[];
 }
 
 export class LabelObject{
   user: string;
+  _id: string;
   name: string;
-  id: string;
   tasks: string[];
 }
 

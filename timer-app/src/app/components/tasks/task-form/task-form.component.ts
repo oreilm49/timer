@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TaskObject} from "../../../objects";
+import {ReturnedLabelObject, TaskObject} from "../../../objects";
 import {LabelObject} from "../../../objects"
 import {TaskService} from "../../../services/task.service";
 import {LabelService} from "../../../services/label.service";
@@ -13,7 +13,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 export class TaskFormComponent implements OnInit {
   tasks: TaskObject[];
-  labels: LabelObject[];
+  labels: ReturnedLabelObject[] = [];
 
   //calendar specific variables
   userId = '1';
@@ -31,6 +31,16 @@ export class TaskFormComponent implements OnInit {
   start_time: Date;
   label: string;
   end_time: Date;
+
+  dropdownSettings = {
+    singleSelection: false,
+    idField: 'item_id',
+    textField: 'item_text',
+    selectAllText: 'Select All',
+    unSelectAllText: 'UnSelect All',
+    itemsShowLimit: 3,
+    allowSearchFilter: true
+  };
 
   constructor(private taskService: TaskService,
               private labelService: LabelService,
@@ -73,14 +83,17 @@ export class TaskFormComponent implements OnInit {
     this.invalidDates = [today, invalidDate];
     this.getTasks();
     this.getLabels();
+
   }
 
   onTaskSubmit() {
+    let date=this.start_time;
+    let newDate=date.month+"/"+date.day+"/"+date.year;
     const task: TaskObject = {
       user: this.userId,
       name: this.name,
       duration: this.duration,
-      start_time: this.start_time,
+      start_time: new Date(newDate).getTime(),
       end_time: this.end_time
     };
 
@@ -121,5 +134,10 @@ export class TaskFormComponent implements OnInit {
   }
   deleteTaskFromList(task): void {
     this.tasks = this.tasks.filter(item => item !== task);
+  }
+
+  newLabelToList(label) {
+    console.log(label);
+    this.labels.push(label)
   }
 }

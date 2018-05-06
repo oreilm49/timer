@@ -14,13 +14,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { TaskFormComponent } from './components/tasks/task-form/task-form.component';
 import { HttpClientModule } from "@angular/common/http";
 import {FlashMessagesModule, FlashMessagesService} from "angular2-flash-messages";
-import {MatTableModule} from "@angular/material";
 
 import {TaskService} from "./services/task.service";
 import {LabelService} from "./services/label.service";
 import {ValidatorService} from "./services/validator.service";
 import { TaskListComponent } from './components/tasks/task-form/task-list/task-list.component';
 import { TaskPopoverComponent } from './components/tasks/task-form/task-list/task-popover/task-popover.component';
+import { LabelAddComponent } from './components/tasks/task-form/label-add/label-add.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TaskPopoverComponent } from './components/tasks/task-form/task-list/tas
     TaskFormComponent,
     TaskListComponent,
     TaskPopoverComponent,
+    LabelAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +43,8 @@ import { TaskPopoverComponent } from './components/tasks/task-form/task-list/tas
     BrowserAnimationsModule,
     HttpClientModule,
     FlashMessagesModule,
-    MatTableModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [TaskService, LabelService, ValidatorService, FlashMessagesService, TaskListComponent],
   bootstrap: [AppComponent]

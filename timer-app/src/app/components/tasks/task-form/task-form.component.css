@@ -1,15 +1,20 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 .task-input {
   padding-top: 50px;
 }
 
-.input-group-prepend {
-  width: 150px;
-}
-
-.input-group-prepend label {
-  width: 100%;
-}
-
 .taskList {
   margin-top: 5%;
+}
+
+.task-name-input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0 !important;
+}
+
+.create-task-btn {
+
 }

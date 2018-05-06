@@ -1,39 +1,61 @@
 <div class="task-input">
   <form (ngSubmit)="onTaskSubmit()">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Task Name</label>
+    <div class="row">
+      <!--name-->
+      <div class="input-group mb-3">
+        <input
+          [(ngModel)]="name"
+          name="name"
+          type="text"
+          class="form-control task-name-input"
+          placeholder="Create A New Task"
+          aria-label=""
+          aria-describedby="basic-addon1">
       </div>
-      <input [(ngModel)]="name" name="name" type="text" class="form-control" placeholder="" aria-label=""
-             aria-describedby="basic-addon1">
     </div>
+    <div class="row">
+      <!--duration-->
+      <div class="input-group mb-3 col-md">
+        <input
+          [(ngModel)]="duration"
+          name="duration"
+          type="number"
+          class="form-control"
+          placeholder="Duration"
+          aria-label=""
+          aria-describedby="basic-addon1">
+      </div>
+      <!--labels-->
+      <div class="input-group mb-3 col-md">
+        <select
+          [(ngModel)]="label"
+          name="label"
+          class="custom-select"
+          id="inputGroupSelect01"
+          required
+        >
+          <option [ngValue]="undefined" disabled  selected>Labels</option>
+          <option *ngFor="let label of labels" value="{{label._id}}">{{label.name}}</option>
+        </select>
+        <div class="input-group-append">
+          <app-label-add (createdLabel)="newLabelToList($event)"></app-label-add>
+        </div>
+      </div>
+      <!--start date-->
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="Start Date"
+                 name="dp" [(ngModel)]="start_time" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+              <i class="far fa-calendar-alt" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Duration (mins)</label>
-      </div>
-      <input [(ngModel)]="duration" name="duration" type="number" class="form-control" placeholder="" aria-label=""
-             aria-describedby="basic-addon1">
     </div>
-
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Labels</label>
-      </div>
-      <select [(ngModel)]="label" name="label" class="custom-select" id="inputGroupSelect01">
-        <option selected>Choose...</option>
-        <option  *ngFor="let label of labels" value="{{label.name}}">{{label.name}}</option>
-      </select>
-    </div>
-
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Start Time</label>
-      </div>
-      <p-calendar styleClass="form-control calendar" [(ngModel)]="start_time" name="start_time" [showTime]="true"
-                  [showButtonBar]="true"></p-calendar>
-    </div>
-    <button type="submit" class="btn btn-dark btn-lg">Create Task</button>
+    <button type="submit" class="btn btn-primary create-task-btn">Create Task</button>
   </form>
 </div>
 
@@ -46,7 +68,8 @@
       <div class="col">Update</div>
     </div>
   </div>
-    <app-task-list class="list-group-item" *ngFor="let task of tasks; let i = index" [listItem]="task" (removeTask)="deleteTaskFromList(task)" ></app-task-list>
+  <app-task-list class="list-group-item" *ngFor="let task of tasks; let i = index" [listItem]="task"
+                 (removeTask)="deleteTaskFromList(task)"></app-task-list>
 </div>
 
 
