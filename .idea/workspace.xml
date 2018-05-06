@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="72964c9c-a88a-4bc6-8308-7d81c0501d5e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/timer-app/package-lock.json" afterPath="$PROJECT_DIR$/timer-app/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/timer-app/package.json" afterPath="$PROJECT_DIR$/timer-app/package.json" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/app.module.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.css" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.css" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.html" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.html" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.ts" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/tasks.component.html" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/tasks.component.html" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/objects.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/objects.ts" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/services/label.service.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/services/label.service.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -330,12 +321,12 @@
       <workItem from="1523993799907" duration="31008000" />
       <workItem from="1524929879122" duration="35021000" />
       <workItem from="1525285430442" duration="4800000" />
-      <workItem from="1525370913312" duration="26200000" />
+      <workItem from="1525370913312" duration="26231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156358000" />
+    <option name="totallyTimeSpent" value="156389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1249" height="1047" extended-state="0" />
