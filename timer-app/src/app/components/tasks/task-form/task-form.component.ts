@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ReturnedLabelObject, TaskObject} from "../../../objects";
+import {dateEntry, ReturnedLabelObject, TaskObject} from "../../../objects";
 import {LabelObject} from "../../../objects"
 import {TaskService} from "../../../services/task.service";
 import {LabelService} from "../../../services/label.service";
@@ -15,32 +15,13 @@ export class TaskFormComponent implements OnInit {
   tasks: TaskObject[];
   labels: ReturnedLabelObject[] = [];
 
-  //calendar specific variables
   userId = '1';
-  dates: Date[];
-  rangeDates: Date[];
-  minDate: Date;
-  maxDate: Date;
-  es: any;
-  tr: any;
-  invalidDates: Array<Date>;
-
   // task form variables
   name: string;
   duration: number;
-  start_time: Date;
+  start_time: dateEntry;
   label: string;
-  end_time: Date;
-
-  dropdownSettings = {
-    singleSelection: false,
-    idField: 'item_id',
-    textField: 'item_text',
-    selectAllText: 'Select All',
-    unSelectAllText: 'UnSelect All',
-    itemsShowLimit: 3,
-    allowSearchFilter: true
-  };
+  end_time: number;
 
   constructor(private taskService: TaskService,
               private labelService: LabelService,
@@ -49,38 +30,6 @@ export class TaskFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.es = {
-      firstDayOfWeek: 1,
-      dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      dayNamesShort: ["sun", "mon", "tue", "web", "thu", "fri", "sat"],
-      dayNamesMin: ["S", "M", "T", "W", "T", "F", "S"],
-      monthNames: ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
-      monthNamesShort: ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"],
-      today: 'today',
-      clear: 'Clear'
-    };
-
-    this.tr = {
-      firstDayOfWeek: 1
-    };
-
-    let today = new Date();
-    let month = today.getMonth();
-    let year = today.getFullYear();
-    let prevMonth = (month === 0) ? 11 : month - 1;
-    let prevYear = (prevMonth === 11) ? year - 1 : year;
-    let nextMonth = (month === 11) ? 0 : month + 1;
-    let nextYear = (nextMonth === 0) ? year + 1 : year;
-    this.minDate = new Date();
-    this.minDate.setMonth(prevMonth);
-    this.minDate.setFullYear(prevYear);
-    this.maxDate = new Date();
-    this.maxDate.setMonth(nextMonth);
-    this.maxDate.setFullYear(nextYear);
-
-    let invalidDate = new Date();
-    invalidDate.setDate(today.getDate() - 1);
-    this.invalidDates = [today, invalidDate];
     this.getTasks();
     this.getLabels();
 
@@ -88,14 +37,17 @@ export class TaskFormComponent implements OnInit {
 
   onTaskSubmit() {
     let date=this.start_time;
-    let newDate=date.month+"/"+date.day+"/"+date.year;
+    let newDate = date.month+"/"+date.day+"/"+date.year;
+    let newDateNumber = new Date(newDate).getTime();
     const task: TaskObject = {
       user: this.userId,
       name: this.name,
       duration: this.duration,
-      start_time: new Date(newDate).getTime(),
+      start_time: newDateNumber,
       end_time: this.end_time
     };
+
+    console.log(task);
 
     // Required Fields
     if (!this.validatorService.validateTask(task)) {
@@ -107,7 +59,7 @@ export class TaskFormComponent implements OnInit {
             this.tasks.push(val);
             this.name = '';
             this.duration = 0;
-            this.start_time = new Date();
+            this.start_time = new dateEntry;
             this.name = '';
             this.label = '';
           },

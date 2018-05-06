@@ -1,10 +1,10 @@
-<div class="row">
-  <div class="col">{{listItem.name}}</div>
+<div class="row task-list-item border">
   <div class="col conceal" #taskId>{{listItem._id}}</div>
-  <div class="col">{{listItem.start_time}}</div>
-  <div class="col">{{listItem.duration}}</div>
-  <div class="col">
-    <button type="button" class="btn btn-success" [ngbPopover]="popOver" container="body"><i class="fas fa-check-circle"></i></button>
+  <div class="time"><strong>{{listItem.start_time | date: 'dd MMM'}}</strong></div>
+  <div class="task-name">{{listItem.name}}</div>
+  <div class="duration">{{listItem.duration}} mins</div>
+  <div class="edit-buttons">
+    <button type="button" class="btn btn-success edit-button" [ngbPopover]="popOver" container="body"><i class="fas fa-check-circle"></i></button>
     <button type="button" class="btn btn-danger" (click)="deleteTask(i)"><i class="fas fa-times-circle"></i></button>
   </div>
 </div>

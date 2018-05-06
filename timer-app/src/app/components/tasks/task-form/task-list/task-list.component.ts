@@ -15,6 +15,9 @@ export class TaskListComponent implements OnInit {
   @Output() removeTask = new EventEmitter<TaskObject>();
   @Output() toComplete = new EventEmitter<TaskObject>();
 
+  day: Date;
+  month: Date;
+
   constructor(
     private taskService: TaskService,
     private rd: Renderer2

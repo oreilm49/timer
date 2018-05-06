@@ -15,6 +15,12 @@ export class CompletedTask {
   public end_time: number;
 }
 
+export class dateEntry {
+  day: number;
+  month: number;
+  year: number;
+}
+
 export class NewLabelObject{
   user: string;
   name: string;

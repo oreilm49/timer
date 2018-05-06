@@ -7,6 +7,7 @@ const taskById = function (user, callback) {
         if (err) {
             callback(err);
         }
+        console.log(tasks[0]);
         callback(tasks)
     })
 };
