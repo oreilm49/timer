@@ -1,5 +1,5 @@
 <div class="task-input">
-  <form (ngSubmit)="taskFinished()">
+  <form (ngSubmit)="taskUpdate()">
 
     <!--name-->
     <div class="row form-group mb-3 col-md">
@@ -37,44 +37,29 @@
     </div>
 
 
-      <!--start date-->
+    <!--start date-->
     <div class="row col-md">
-      <label for="start-time-input">When did you work on this task?</label>
+      <label for="start-time-input">When will you work on this task?</label>
     </div>
-      <div class="input-group row mb-3 col-md">
-        <input
-          class="form-control"
-          placeholder="{{activeTask.start_time | date: 'dd-MMM'}}"
-          name="dp"
-          [(ngModel)]="start_time"
-          ngbDatepicker #d="ngbDatepicker"
+    <div class="input-group row mb-3 col-md">
+      <input
+        class="form-control"
+        placeholder="{{activeTask.start_time | date: 'dd-MMM'}}"
+        name="dp"
+        [(ngModel)]="start_time"
+        ngbDatepicker #d="ngbDatepicker"
         id="start-time-input"
-        >
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-            <i class="far fa-calendar-alt" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i>
-          </button>
-        </div>
+      >
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+          <i class="far fa-calendar-alt" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i>
+        </button>
       </div>
-
-
-    <!--time-->
-    <div class="row col-md">
-      <label for="time-input">What time did you start?</label>
-    </div>
-    <div class="row form-group mb-3 col-md">
-      <ngb-timepicker
-        [(ngModel)]="time"
-        id="time-input"
-        name="time"
-        [meridian]="meridian"
-        [minuteStep]="minuteStep"
-      ></ngb-timepicker>
     </div>
 
     <!--duration-->
     <div class="row form-group mb-3 col-md">
-      <label for="duration-input">How many minutes did it take you?:</label>
+      <label for="duration-input">How many minutes will it take you?</label>
       <input
         [(ngModel)]="duration"
         name="duration"
@@ -87,6 +72,7 @@
         aria-describedby="basic-addon1">
     </div>
 
-    <button type="submit" class="btn btn-dark btn-lg">Complete Task</button>
+    <button type="submit" class="btn btn-dark btn-lg">Update Task</button>
   </form>
 </div>
+

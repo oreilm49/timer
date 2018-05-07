@@ -61,8 +61,14 @@
 
 <div class="taskList">
   <p class="task-list-header"><strong>Task List</strong></p>
-  <app-task-list class="" *ngFor="let task of tasks; let i = index" [listItem]="task"
-                 (removeTask)="deleteTaskFromList(task)"></app-task-list>
+  <app-task-list
+    class=""
+    *ngFor="let task of tasks; let i = index"
+    [listItem]="task"
+    (removeTask)="deleteTaskFromList(task)"
+    (removeTaskIndex)="removeTaskByIndex($event)"
+    (editTask)="updateEditedTask($event)"
+  ></app-task-list>
 </div>
 
 

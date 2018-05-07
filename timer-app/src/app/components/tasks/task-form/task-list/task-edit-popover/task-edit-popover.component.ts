@@ -1,21 +1,23 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {CompletedTask, LabelObject, TaskObject} from "../../../../../objects";
-import {ValidatorService} from "../../../../../services/validator.service";
-import {FlashMessagesService} from "angular2-flash-messages";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {CompletedTask, TaskObject} from "../../../../../objects";
 import {TaskService} from "../../../../../services/task.service";
+import {FlashMessagesService} from "angular2-flash-messages";
 import {LabelService} from "../../../../../services/label.service";
-import {NgbPopoverConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NgbPopoverConfig} from "@ng-bootstrap/ng-bootstrap";
+import {ValidatorService} from "../../../../../services/validator.service";
 
 @Component({
-  selector: 'app-task-popover',
-  templateUrl: './task-popover.component.html',
-  styleUrls: ['./task-popover.component.css'],
-  providers: [NgbPopoverConfig]
+  selector: 'app-task-edit-popover',
+  templateUrl: './task-edit-popover.component.html',
+  styleUrls: ['./task-edit-popover.component.css']
 })
-export class TaskPopoverComponent implements OnInit {
+export class TaskEditPopoverComponent implements OnInit {
   @Input() activeTask: CompletedTask;
-  @Output() completeTask = new EventEmitter<TaskObject>();
+  @Input() index;
+  @Output() editedTask = new EventEmitter<TaskObject>();
+  @Output() editedTaskIndex = new EventEmitter<number>();
   @Output() closePop = new EventEmitter();
+
   // task form variables
   userId: '1';
   id: string;
@@ -24,11 +26,6 @@ export class TaskPopoverComponent implements OnInit {
   start_time: number;
   label: string;
   end_time: number;
-
-  //time input controls
-  minuteStep = 15;
-  meridian = true;
-
 
   constructor(
     private validatorService: ValidatorService,
@@ -41,10 +38,9 @@ export class TaskPopoverComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
-  taskFinished() {
+  taskUpdate() {
     if (this.id == undefined) {
       this.id = this.activeTask._id;
     }
@@ -71,20 +67,12 @@ export class TaskPopoverComponent implements OnInit {
     };
 
     // Required Fields
-    if (!this.validatorService.validateTaskComplete(task)) {
-      this.flashMessagesService.show('Please update task end time', {cssClass: 'alert-danger', timeout: 3000})
-    } else {
+
       this.taskService.completeTask(task)
         .subscribe(val => {
-            console.log(val);
-            const emitTask: TaskObject = {
-              user: val.user,
-              name: val.name,
-              duration: val.duration,
-              start_time: val.start_time,
-              end_time: val.end_time
-            };
-            this.completeTask.emit(emitTask);
+            console.log("Task created: "+val);
+            this.editedTask.emit(task);
+            this.closePop.emit();
             this.name = '';
             this.duration = 0;
             this.start_time = 0;
@@ -95,6 +83,7 @@ export class TaskPopoverComponent implements OnInit {
           response => {
             console.log("POST call in error", response);
           });
-    }
+
+
   }
 }

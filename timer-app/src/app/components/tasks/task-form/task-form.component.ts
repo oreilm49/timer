@@ -92,4 +92,14 @@ export class TaskFormComponent implements OnInit {
     console.log(label);
     this.labels.push(label)
   }
+  removeTaskByIndex(index){
+    console.log(index);
+    this.tasks.splice(index, 1)
+  }
+
+  updateEditedTask(task) {
+    this.tasks.push(task)
+  }
+
+
 }
