@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core'
 import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 import {Renderer2} from "@angular/core";
 import {LabelService} from "../../../../services/label.service";
-import {NewLabelObject, LabelObject, ReturnedLabelObject} from "../../../../objects";
+import {NewLabelObject, LabelObject, ReturnedLabelObject, CreateLabelObject} from "../../../../objects";
 
 @Component({
   selector: 'app-label-add',
@@ -30,7 +30,7 @@ export class LabelAddComponent implements OnInit {
 
   onNewLabel(event) {
     if(event.keyCode == 13) {
-      const label: NewLabelObject = {
+      const label: CreateLabelObject = {
         name: this.labelName,
         user: this.user,
       };

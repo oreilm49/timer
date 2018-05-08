@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {CompletedTask, LabelObject, TaskObject} from "../../../../../objects";
+import {CompletedTask, TimeObject, TaskObject, dateEntry} from "../../../../../objects";
 import {ValidatorService} from "../../../../../services/validator.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {TaskService} from "../../../../../services/task.service";
@@ -21,9 +21,10 @@ export class TaskPopoverComponent implements OnInit {
   id: string;
   name: string;
   duration: number;
-  start_time: number;
+  start_time: dateEntry;
   label: string;
   end_time: number;
+  time: TimeObject;
 
   //time input controls
   minuteStep = 15;
@@ -45,6 +46,15 @@ export class TaskPopoverComponent implements OnInit {
   }
 
   taskFinished() {
+    let newDateNumber = this.activeTask.start_time;
+    //convert newely selected date to number formant
+    if (this.start_time) {
+      let date=this.start_time;
+      let newDate = date.month+"/"+date.day+"/"+date.year;
+      newDateNumber = new Date(newDate).getTime();
+    }
+
+    // check for fields with no user input, assign preselected values
     if (this.id == undefined) {
       this.id = this.activeTask._id;
     }
@@ -54,43 +64,39 @@ export class TaskPopoverComponent implements OnInit {
     if (this.duration == undefined) {
       this.duration = this.activeTask.duration;
     }
-    if (this.start_time == undefined) {
-      this.start_time = this.activeTask.start_time;
-    }
     if (this.end_time == undefined && this.activeTask.end_time !== undefined) {
       this.end_time = this.activeTask.end_time;
     }
+
+    // compute time of completion (start date + start time + duration)
+    const finish_time = newDateNumber + (this.time.hour*3600000) + (this.time.minute*60000) + (this.duration*60000);
 
     const task: CompletedTask = {
       user: this.userId,
       _id: this.id,
       name: this.name,
       duration: this.duration,
-      start_time: this.start_time,
-      end_time: this.end_time
+      start_time: newDateNumber,
+      end_time: finish_time
     };
 
-    // Required Fields
+    // Required Fields Validation
     if (!this.validatorService.validateTaskComplete(task)) {
       this.flashMessagesService.show('Please update task end time', {cssClass: 'alert-danger', timeout: 3000})
     } else {
       this.taskService.completeTask(task)
         .subscribe(val => {
-            console.log(val);
             const emitTask: TaskObject = {
               user: val.user,
+              _id: val._id,
               name: val.name,
               duration: val.duration,
               start_time: val.start_time,
-              end_time: val.end_time
+              end_time: finish_time
             };
+            console.log(emitTask);
             this.completeTask.emit(emitTask);
-            this.name = '';
-            this.duration = 0;
-            this.start_time = 0;
-            this.end_time = 0;
-            this.name = '';
-            this.label = '';
+            this.closePop.emit();
           },
           response => {
             console.log("POST call in error", response);

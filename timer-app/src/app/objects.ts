@@ -1,5 +1,6 @@
 export class TaskObject {
   public user: string;
+  public _id: string;
   public name: string;
   public duration: number;
   public start_time: number;
@@ -22,8 +23,18 @@ export class dateEntry {
 }
 
 export class NewLabelObject{
-  user: string;
+  _id: string;
   name: string;
+}
+
+export class CreateLabelObject {
+  name: string;
+  user: string;
+}
+
+export class AddLabel {
+  task: string;
+  labels: string[];
 }
 
 export class ReturnedLabelObject{
@@ -44,4 +55,9 @@ export class ProjectObject {
   user: string;
   name: string;
   task: string;
+}
+
+export class TimeObject {
+  hour: number;
+  minute: number;
 }

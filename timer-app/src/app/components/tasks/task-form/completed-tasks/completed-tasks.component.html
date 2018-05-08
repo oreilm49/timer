@@ -1,9 +1,9 @@
 <div class="row task-list-item border">
-  <div class="col conceal" #taskId>{{listItem._id}}</div>
+  <div class="col conceal" #taskId>{{completedTask._id}}</div>
   <div class="col conceal" #taskIndex>{{i}}</div>
-  <div class="time"><strong>{{listItem.start_time | date: 'dd MMM'}}</strong></div>
-  <div class="task-name">{{listItem.name}}</div>
-  <div class="duration">{{listItem.duration}} mins</div>
+  <div class="time"><strong>{{completedTask.end_time | date: 'dd MMM'}}</strong></div>
+  <div class="task-name">{{completedTask.name}}</div>
+  <div class="duration">{{completedTask.duration}} mins</div>
   <div class="edit-buttons">
     <button type="button" class="btn btn-secondary edit-button" (click)="openVerticallyCentered(editTask)"><i class="far fa-edit"></i></button>
     <button type="button" class="btn btn-success edit-button" (click)="openVerticallyCentered(completeTask)"><i class="fas fa-check-circle"></i></button>
@@ -20,7 +20,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <app-task-popover [activeTask]="listItem" (closePop)="d('Cross click')" (completeTask)="emitComplete($event)"></app-task-popover>
+    <app-task-popover [activeTask]="completedTask" (completeTask)="emitComplete($event)"></app-task-popover>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
@@ -36,7 +36,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <app-task-edit-popover [activeTask]="listItem" (closePop)="c('Close click')" (editedTask)="emitEdit($event)"></app-task-edit-popover>
+    <app-task-edit-popover [activeTask]="completedTask" (closePop)="c('Close click')" (editedTask)="emitEdit($event)"></app-task-edit-popover>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>

@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, ElementRef, Output, ViewChild, Renderer2, EventEmitter, ViewEncapsulation} from '@angular/core';
-import {TaskObject} from "../../../../objects";
+import {CompletedTask, TaskObject} from "../../../../objects";
 import {TaskService} from "../../../../services/task.service";
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
@@ -15,6 +15,7 @@ export class TaskListComponent implements OnInit {
   @ViewChild('taskId') taskId:ElementRef;
   @ViewChild('taskIndex') taskIndex:ElementRef;
   @Output() removeTask = new EventEmitter<TaskObject>();
+  @Output() completeTaskEmit = new EventEmitter<TaskObject>();
   @Output() editTask = new EventEmitter<TaskObject>();
   @Output() removeTaskIndex = new EventEmitter<number>();
   @Output() toComplete = new EventEmitter<TaskObject>();
@@ -37,7 +38,7 @@ export class TaskListComponent implements OnInit {
     this.taskService.deleteTaskById(this.taskId.nativeElement.textContent)
       .subscribe(
         val => {
-          this.removeTask.emit(val);
+          this.completeTaskEmit.emit(val);
         },
         response => {
           console.log("POST call in error", response);

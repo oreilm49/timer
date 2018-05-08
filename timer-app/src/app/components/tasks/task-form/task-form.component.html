@@ -26,17 +26,31 @@
           aria-describedby="basic-addon1">
       </div>
       <!--labels-->
-      <div class="input-group mb-3 col-md">
-        <select
+      <div class="label-dropdown input-group mb-3 col-md">
+        <!--<select-->
+          <!--[multiple]=""-->
+          <!--[(ngModel)]="label"-->
+          <!--name="label"-->
+          <!--class="custom-select"-->
+          <!--id="inputGroupSelect01"-->
+          <!--required-->
+        <!--&gt;-->
+          <!--<option [ngValue]="undefined" disabled  selected>Labels</option>-->
+          <!--<option *ngFor="let label of labels" value="{{label._id}}">{{label.name}}</option>-->
+        <!--</select>-->
+        <ng-multiselect-dropdown
+          [placeholder]="'Labels'"
+          [data]="labels"
           [(ngModel)]="label"
-          name="label"
-          class="custom-select"
+          [settings]="dropdownSettings"
           id="inputGroupSelect01"
-          required
+          name="label"
+          class="form-control"
+          (onSelect)="onItemSelect($event)"
+          (onSelectAll)="onSelectAll($event)"
+          (onDeSelect)="onItemDeSelect($event)"
         >
-          <option [ngValue]="undefined" disabled  selected>Labels</option>
-          <option *ngFor="let label of labels" value="{{label._id}}">{{label.name}}</option>
-        </select>
+        </ng-multiselect-dropdown>
         <div class="input-group-append">
           <app-label-add (createdLabel)="newLabelToList($event)"></app-label-add>
         </div>
@@ -60,15 +74,26 @@
 </div>
 
 <div class="taskList">
-  <p class="task-list-header"><strong>Task List</strong></p>
+  <p class="task-list-header"><strong>Active Tasks</strong></p>
   <app-task-list
     class=""
     *ngFor="let task of tasks; let i = index"
     [listItem]="task"
-    (removeTask)="deleteTaskFromList(task)"
+    (removeTask)="deleteTaskFromActiveTasks(task); moveTaskToCompletedTasks($event)"
+    (completeTaskEmit)="deleteTaskFromView(task)"
     (removeTaskIndex)="removeTaskByIndex($event)"
     (editTask)="updateEditedTask($event)"
   ></app-task-list>
+  <br>
+  <div class="taskList">
+    <p class="task-list-header"><strong>Task Archive</strong></p>
+    <app-completed-tasks
+      class=""
+      *ngFor="let task of completedTasks; let i = index"
+      [completedTask]="task"
+      (removeCompletedTask)="deleteCompletedTask(task)"
+    ></app-completed-tasks>
+  </div>
 </div>
 
 

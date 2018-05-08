@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const model = require('../models/api');
+const analysisModel = require('../models/analysis');
 const db = require('../config/db');
 
 /* GET home page. */
@@ -66,6 +67,13 @@ router.post('/task/create', function (req, res, next) {
     })
 });
 
+router.get('/task/completed/:user', function (req, res, next) {
+    let user = req.params.user;
+    model.completedTasks(user, function (tasks) {
+        res.send(tasks)
+    })
+});
+
 // create new label
 router.post('/label/create', function (req, res, next) {
     let label = {
@@ -82,9 +90,13 @@ router.post('/label/create', function (req, res, next) {
 });
 
 // add task to label
-router.post('/label/add', function (req, res, next) {
+router.post('/labels/addtask', function (req, res, next) {
     let labels = req.body.labels;
     let task = req.body.task;
+    console.log({
+        name: task,
+        labels: labels
+    });
     model.addLabelToTask(task, labels, function (err, createdLabel) {
         if (err) {
             console.log(err);
@@ -135,4 +147,12 @@ router.post('/task/update/', function (req, res, next) {
     })
 });
 
+//Time spent per label
+router.get('/time/label/:period', function (req, res, next) {
+    let period = req.params.period; //today, this week, this month
+    analysisModel.timeByLabel(period, function(labels) {
+        res.send(labels)
+    })
+
+});
 module.exports = router;

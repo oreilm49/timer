@@ -19,6 +19,7 @@ export class TaskService {
   deleteTaskUrl: string = 'http://localhost:3000/api/task/delete/';
   getTaskByIdUrl: string = 'http://localhost:3000/api/task/id/';
   completeTaskUrl: string = 'http://localhost:3000/api/task/update/';
+  getCompletedTasksUrl: string = 'http://localhost:3000/api/task/completed/';
 
   constructor(private http: HttpClient) { }
 
@@ -43,8 +44,13 @@ export class TaskService {
       .pipe(catchError(this.handleError))
   }
 
-  completeTask(task: CompletedTask): Observable<CompletedTask> {
-    return this.http.post<CompletedTask>(this.completeTaskUrl,task)
+  completeTask(task: TaskObject): Observable<TaskObject> {
+    return this.http.post<TaskObject>(this.completeTaskUrl,task)
+      .pipe(catchError(this.handleError))
+  }
+
+  getCompletedTasks(user): Observable<TaskObject> {
+    return this.http.get<TaskObject>(this.getCompletedTasksUrl+user)
       .pipe(catchError(this.handleError))
   }
 

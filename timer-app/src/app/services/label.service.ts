@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {NewLabelObject, ReturnedLabelObject, TaskObject} from "../objects";
+import {AddLabel, CreateLabelObject, NewLabelObject, ReturnedLabelObject, TaskObject} from "../objects";
 import {catchError} from "rxjs/operators";
 import {Observable} from "rxjs/Observable";
 import { HttpHeaders } from '@angular/common/http';
@@ -23,12 +23,12 @@ export class LabelService {
   }
 
   /** POST: add a new task to the database */
-  taskToLabel(label: NewLabelObject): Observable<NewLabelObject> {
-    return this.http.post<NewLabelObject>(this.taskToLabelUrl, label)
+  taskToLabel(label: AddLabel): Observable<NewLabelObject[]> {
+    return this.http.post<NewLabelObject[]>(this.taskToLabelUrl, label)
   };
 
-  createLabel(label: NewLabelObject): Observable<ReturnedLabelObject> {
-    return this.http.post<NewLabelObject>(this.createLabelUrl,label)
+  createLabel(label: CreateLabelObject): Observable<ReturnedLabelObject> {
+    return this.http.post<CreateLabelObject>(this.createLabelUrl,label)
       .pipe(catchError(this.handleError))
   };
 

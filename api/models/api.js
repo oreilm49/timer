@@ -3,13 +3,18 @@ const echasync = require('echasync');
 
 
 const taskById = function (user, callback) {
-    db.tasksModel.find({'user': user}, function (err, tasks) {
-        if (err) {
-            callback(err);
-        }
-        console.log(tasks[0]);
-        callback(tasks)
-    })
+    db.tasksModel.find(
+        {
+            'user': user,
+            'end_time': null
+        },
+        function (err, tasks) {
+            if (err) {
+                callback(err);
+            }
+            console.log(tasks[0]);
+            callback(tasks)
+        })
 };
 
 const taskByLabel = function (label, callback) {
@@ -42,6 +47,21 @@ const createTask = function (task, callback) {
         });
 };
 
+const completedTasks = function (user, callback) {
+    db.tasksModel.find(
+        {
+            'user': user,
+            'end_time': {$exists: true, $ne: null},
+        },
+        function (err, tasks) {
+            if (err) {
+                console.log(err);
+            } else {
+                callback(tasks)
+            }
+        })
+};
+
 const createLabel = function (label, callback) {
     let data = new db.labelModel(label);
     data.save()
@@ -59,7 +79,7 @@ const addLabelToTask = function (task, labels, callback) {
             db.labelModel.findByIdAndUpdate(
                 label,
                 {
-                    "$push": {tasks: task}
+                    "$push": {tasks: {"task":task}}
                 },
                 function (err, label) {
                     if (err) throw err;
@@ -146,5 +166,6 @@ module.exports = {
     deleteTaskById,
     taskBy_Id,
     updateTask,
-    addLabelToTask
+    addLabelToTask,
+    completedTasks
 };

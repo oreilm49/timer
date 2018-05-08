@@ -22,3 +22,40 @@
 }
 
 
+#inputGroupSelect01 > div > div:nth-child(1) {
+  border: 0;
+  padding: 0;
+}
+
+#inputGroupSelect01 > div {
+  border: 0;
+  padding: 0;
+}
+
+#inputGroupSelect01 > div > div:nth-child(1) > span {
+  padding: 0;
+  border: 0 !important;
+}
+
+#inputGroupSelect01 {
+  padding: 0px;
+}
+
+:host /deep/ .multiselect-dropdown[_ngcontent-c4]   .dropdown-btn[_ngcontent-c4] {
+  display: inline-block;
+  border: 0 !important;
+  width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.52857143;
+  text-align: left;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border-radius: 4px
+}
+
+
+

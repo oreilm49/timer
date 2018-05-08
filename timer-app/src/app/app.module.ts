@@ -23,6 +23,7 @@ import { TaskPopoverComponent } from './components/tasks/task-form/task-list/tas
 import { LabelAddComponent } from './components/tasks/task-form/label-add/label-add.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { TaskEditPopoverComponent } from './components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component';
+import { CompletedTasksComponent } from './components/tasks/task-form/completed-tasks/completed-tasks.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TaskEditPopoverComponent } from './components/tasks/task-form/task-list
     TaskPopoverComponent,
     LabelAddComponent,
     TaskEditPopoverComponent,
+    CompletedTasksComponent,
   ],
   imports: [
     BrowserModule,
