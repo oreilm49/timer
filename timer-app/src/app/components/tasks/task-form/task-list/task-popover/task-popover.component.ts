@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {CompletedTask, TimeObject, TaskObject, dateEntry} from "../../../../../objects";
+import {TimeObject, TaskObject, dateEntry} from "../../../../../objects";
 import {ValidatorService} from "../../../../../services/validator.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {TaskService} from "../../../../../services/task.service";
@@ -13,7 +13,7 @@ import {NgbPopoverConfig} from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbPopoverConfig]
 })
 export class TaskPopoverComponent implements OnInit {
-  @Input() activeTask: CompletedTask;
+  @Input() activeTask: TaskObject;
   @Output() completeTask = new EventEmitter<TaskObject>();
   @Output() closePop = new EventEmitter();
   // task form variables
@@ -71,7 +71,7 @@ export class TaskPopoverComponent implements OnInit {
     // compute time of completion (start date + start time + duration)
     const finish_time = newDateNumber + (this.time.hour*3600000) + (this.time.minute*60000) + (this.duration*60000);
 
-    const task: CompletedTask = {
+    const task: TaskObject = {
       user: this.userId,
       _id: this.id,
       name: this.name,

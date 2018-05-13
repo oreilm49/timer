@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {CompletedTask, TaskObject} from "../objects";
+import {TaskObject} from "../objects";
 import {catchError} from "rxjs/operators";
 import {Observable} from "rxjs/Observable";
 import { HttpHeaders } from '@angular/common/http';
 import {ErrorObservable} from "rxjs/observable/ErrorObservable";
-import {Task} from "protractor/built/taskScheduler";
 
 const httpOptions = {
   headers: new HttpHeaders({

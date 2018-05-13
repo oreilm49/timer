@@ -1,0 +1,39 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-row-gap: 20px;
+  width: 100%;
+  margin: 20px;
+}
+
+.control-bar {
+  grid-column: 1;
+  width: 100%;
+  height: auto;
+  background-color: #f3f3f3;
+}
+
+.dash-charts {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.time-select {
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+  background-color: #f3f3f3;
+  border-color: #f7f7f7;
+}
+
+.stats {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 20px;
+}
+
+.stats div {
+  background-color: #f3f3f3;
+  padding: 10px;
+}

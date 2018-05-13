@@ -7,15 +7,6 @@ export class TaskObject {
   public end_time: number;
 }
 
-export class CompletedTask {
-  public user: string;
-  public _id: string;
-  public name: string;
-  public duration: number;
-  public start_time: number;
-  public end_time: number;
-}
-
 export class dateEntry {
   day: number;
   month: number;
@@ -51,13 +42,28 @@ export class LabelObject{
   tasks: string[];
 }
 
-export class ProjectObject {
-  user: string;
-  name: string;
-  task: string;
-}
-
 export class TimeObject {
   hour: number;
   minute: number;
+}
+
+export class LabelData {
+  key: string;
+  value: LabelDataValue;
+}
+
+export class LabelDataValue {
+  public count: number;
+  public total: number;
+}
+
+export class TaskData {
+  completed: number;
+  scheduled: number;
+  total: number;
+}
+
+export class CountDuration {
+  count: number;
+  duration: number;
 }

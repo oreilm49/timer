@@ -3,22 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="72964c9c-a88a-4bc6-8308-7d81c0501d5e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/api/models/api.js" afterPath="$PROJECT_DIR$/api/models/api.js" />
+      <change beforePath="$PROJECT_DIR$/api/models/analysis.js" afterPath="$PROJECT_DIR$/api/models/analysis.js" />
       <change beforePath="$PROJECT_DIR$/api/package-lock.json" afterPath="$PROJECT_DIR$/api/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/api/package.json" afterPath="$PROJECT_DIR$/api/package.json" />
       <change beforePath="$PROJECT_DIR$/api/routes/api.js" afterPath="$PROJECT_DIR$/api/routes/api.js" />
+      <change beforePath="$PROJECT_DIR$/timer-app/.angular-cli.json" afterPath="$PROJECT_DIR$/timer-app/.angular-cli.json" />
+      <change beforePath="$PROJECT_DIR$/timer-app/package-lock.json" afterPath="$PROJECT_DIR$/timer-app/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/timer-app/package.json" afterPath="$PROJECT_DIR$/timer-app/package.json" />
+      <change beforePath="$PROJECT_DIR$/timer-app/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/app-routing.module.ts" />
+      <change beforePath="$PROJECT_DIR$/timer-app/src/app/app.component.css" afterPath="$PROJECT_DIR$/timer-app/src/app/app.component.css" />
       <change beforePath="$PROJECT_DIR$/timer-app/src/app/app.module.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/label-add/label-add.component.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/label-add/label-add.component.ts" />
+      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/timer-app/src/app/components/navbar/navbar.component.html" />
+      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/navbar/navbar.component.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/components/navbar/navbar.component.ts" />
+      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.html" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.html" />
+      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.ts" />
       <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.css" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.css" />
       <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.html" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.html" />
       <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.ts" />
+      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component.ts" />
       <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.html" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.html" />
       <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.ts" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.html" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.html" />
       <change beforePath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.ts" />
       <change beforePath="$PROJECT_DIR$/timer-app/src/app/objects.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/objects.ts" />
-      <change beforePath="$PROJECT_DIR$/timer-app/src/app/services/label.service.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/services/label.service.ts" />
       <change beforePath="$PROJECT_DIR$/timer-app/src/app/services/task.service.ts" afterPath="$PROJECT_DIR$/timer-app/src/app/services/task.service.ts" />
+      <change beforePath="$PROJECT_DIR$/timer-app/src/environments/environment.ts" afterPath="$PROJECT_DIR$/timer-app/src/environments/environment.ts" />
+      <change beforePath="$PROJECT_DIR$/timer-app/src/tsconfig.app.json" afterPath="$PROJECT_DIR$/timer-app/src/tsconfig.app.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,54 +41,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/models/api.js">
+      <file leaf-file-name="task-form.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/routes/api.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="154" column="6" lean-forward="true" selection-start-line="154" selection-start-column="6" selection-end-line="154" selection-end-column="6" />
+            <state relative-caret-position="309">
+              <caret line="50" column="4" lean-forward="false" selection-start-line="50" selection-start-column="4" selection-end-line="57" selection-end-column="7" />
               <folding>
-                <element signature="e#344#379#0" expanded="false" />
-                <element signature="e#463#575#0" expanded="false" />
-                <element signature="e#650#757#0" expanded="false" />
-                <element signature="e#842#1051#0" expanded="false" />
-                <element signature="e#1142#1268#0" expanded="false" />
-                <element signature="e#1345#1727#0" expanded="false" />
-                <element signature="e#1793#1909#0" expanded="false" />
-                <element signature="e#1988#2258#0" expanded="false" />
-                <element signature="e#2340#2691#0" expanded="false" />
-                <element signature="e#2964#3272#0" expanded="false" />
-                <element signature="e#3354#3466#0" expanded="false" />
-                <element signature="e#3546#3653#0" expanded="false" />
+                <element signature="n#!!block;n#deleteTaskFromActiveTasks#0;n#TaskFormComponent#0" expanded="false" />
+                <element signature="n#!!block;n#moveTaskToCompletedTasks#0;n#TaskFormComponent#0" expanded="false" />
+                <element signature="n#!!block;n#deleteTaskFromView#0;n#TaskFormComponent#0" expanded="false" />
+                <element signature="n#!!block;n#deleteCompletedTask#0;n#TaskFormComponent#0" expanded="false" />
+                <element signature="n#!!block;n#removeTaskByIndex#0;n#TaskFormComponent#0" expanded="false" />
+                <element signature="n#!!block;n#updateEditedTask#0;n#TaskFormComponent#0" expanded="false" />
+                <element signature="n#!!block;n#onItemSelect#0;n#TaskFormComponent#0" expanded="false" />
+                <element signature="n#!!block;n#onItemDeSelect#0;n#TaskFormComponent#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analysis.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/models/analysis.js">
+      <file leaf-file-name="dash-charts.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/dashboard/dash-charts/dash-charts.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="-115">
+              <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/config/db.js">
+      <file leaf-file-name="dashboard.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/timer-app/src/app/services/dashboard.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+            <state relative-caret-position="161">
+              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -113,6 +108,7 @@
       <find>completeTask</find>
       <find>deleteTaskFromList</find>
       <find>removeTask</find>
+      <find>masthead</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,57 +117,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/timer-app/src/app/calendar/calendar.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/tasks/tasks.component.ts" />
-        <option value="$PROJECT_DIR$/timer-app/.angular-cli.json" />
-        <option value="$PROJECT_DIR$/timer-app/package.json" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/tasks/tasks.component.css" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/tasks/tasks.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/tasks.component.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/task-object.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/taskObject.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/task-form/task-form.component.css" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/task-list/task-list.component.css" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/task-form/task-form.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/task-list/task-list.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/task-form/task-form.component.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/task-list/task-list.component.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-list/task-list.component.ts" />
-        <option value="$PROJECT_DIR$/timer-app/proxy.config.json" />
-        <option value="$PROJECT_DIR$/timer-app/src/index.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/app.component.css" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.css" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/services/validator.service.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/tasks.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/tasks.component.css" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.css" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/label-add/label-add.component.html" />
         <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/label-add/label-add.component.css" />
         <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component.ts" />
         <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/completed-tasks/completed-tasks.component.ts" />
         <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/completed-tasks/completed-tasks.component.html" />
         <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.css" />
         <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/services/task.service.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/objects.ts" />
         <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/label-add/label-add.component.ts" />
         <option value="$PROJECT_DIR$/timer-app/src/app/services/label.service.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.ts" />
         <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/multiselectdropdown.css" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.css" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.ts" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.html" />
-        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.ts" />
-        <option value="$PROJECT_DIR$/api/routes/api.js" />
         <option value="$PROJECT_DIR$/api/models/api.js" />
         <option value="$PROJECT_DIR$/api/config/db.js" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/services/task.service.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/.angular-cli.json" />
+        <option value="$PROJECT_DIR$/timer-app/src/index.html" />
+        <option value="$PROJECT_DIR$/timer-app/src/tsconfig.app.json" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/dashboard/dash-charts/dash-charts.component.html" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/dashboard/dash-charts/dash-charts.component.css" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/dashboard/dashboard.component.css" />
+        <option value="$PROJECT_DIR$/api/routes/api.js" />
         <option value="$PROJECT_DIR$/api/models/analysis.js" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/objects.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/dashboard/dashboard.component.html" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/dashboard/dashboard.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.html" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.html" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/app.component.css" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.html" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.css" />
+        <option value="$PROJECT_DIR$/timer-app/src/environments/environment.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/login/login.component.html" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/register/login.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/register/register.component.spec.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/register/register.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/register/register.component.html" />
+        <option value="$PROJECT_DIR$/timer-app/package.json" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/navbar/navbar.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/services/auth.service.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/home/home.component.html" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/home/home.component.css" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/services/auth-guard.service.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/login/login.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/services/dashboard.service.ts" />
+        <option value="$PROJECT_DIR$/timer-app/src/app/components/dashboard/dash-charts/dash-charts.component.ts" />
       </list>
     </option>
   </component>
@@ -193,7 +189,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1294" />
+    <option name="width" value="1090" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -224,25 +220,28 @@
             <path>
               <item name="timer" type="b2602c69:ProjectViewProjectNode" />
               <item name="timer" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="timer-app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="timer" type="b2602c69:ProjectViewProjectNode" />
               <item name="timer" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="timer-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="timer" type="b2602c69:ProjectViewProjectNode" />
               <item name="timer" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="timer-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="timer" type="b2602c69:ProjectViewProjectNode" />
               <item name="timer" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="timer-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -255,25 +254,26 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../oversight/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BookNotes" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\timer-app\src\app\components\tasks\task-form\task-list" />
-      <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\api\routes" />
-      <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\api\public" />
-      <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\api\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\timer-app\src\app\components\tasks\task-form" />
       <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\timer-app\src\app\components\tasks" />
       <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\timer-app\src\app\components" />
       <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\timer-app\src\app\services" />
       <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\api\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\timer-app\src\app\services" />
+      <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\timer-app\src\app\components" />
+      <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\timer-app\src\app\components\tasks\task-form\task-list" />
+      <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\api\routes" />
+      <recent name="C:\Users\marko\OneDrive\Documents\App Projects\timer\api\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -287,6 +287,9 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="timer-api" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="api/bin/www" working-dir="$PROJECT_DIR$" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -316,26 +319,29 @@
       <workItem from="1524929879122" duration="35021000" />
       <workItem from="1525285430442" duration="4800000" />
       <workItem from="1525370913312" duration="75599000" />
+      <workItem from="1525888333281" duration="42684000" />
+      <workItem from="1526205461021" duration="16570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205757000" />
+    <option name="totallyTimeSpent" value="265011000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1090" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26650757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25071225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3585746" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30178174" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -353,258 +359,12 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/calendar/calendar.component.ts" />
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/calendar/calendar.component.html" />
-    <entry file="file://$PROJECT_DIR$/timer-app/src/tsconfig.app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/.angular-cli.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="21" column="64" lean-forward="false" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/task-object.ts" />
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-554">
-          <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/proxy.config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/calendar/calendar.component.html" />
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/sectional.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="197" lean-forward="false" selection-start-line="9" selection-start-column="197" selection-end-line="9" selection-end-column="197" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/services/validator.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/tasks.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/tasks.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/tasks.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/label-add/label-add.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/label-add/label-add.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-edit-popover/task-popover.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="47" column="17" lean-forward="true" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#4;n#form#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="74" column="33" lean-forward="false" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="12" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/node_modules/bootstrap/scss/_input-group.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1495">
-          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/services/label.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/label-add/label-add.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="43" column="6" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/multiselectdropdown.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/multiselectdropdown.css" />
     <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -613,106 +373,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/objects.ts">
+    <entry file="file://$PROJECT_DIR$/api/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1886">
+          <caret line="82" column="18" lean-forward="false" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/services/task.service.ts">
+    <entry file="file://$PROJECT_DIR$/api/config/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="49" column="3" lean-forward="true" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="621">
+          <caret line="27" column="3" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="25" column="89" lean-forward="true" selection-start-line="25" selection-start-column="89" selection-end-line="25" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="49" column="3" lean-forward="true" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="-23">
+          <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#88#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-popover/task-popover.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="95" column="14" lean-forward="true" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
+        <state relative-caret-position="184">
+          <caret line="73" column="26" lean-forward="false" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
           <folding>
             <element signature="e#0#77#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.ts">
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="322">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding>
-            <element signature="e#0#48#0" expanded="false" />
-            <element signature="n#!!block;n#getTasks#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#getLabels#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#getCompletedTasks#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#deleteTaskFromActiveTasks#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#moveTaskToCompletedTasks#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#deleteTaskFromView#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#deleteCompletedTask#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#newLabelToList#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#removeTaskByIndex#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#updateEditedTask#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#onItemSelect#0;n#TaskFormComponent#0" expanded="false" />
-            <element signature="n#!!block;n#onItemDeSelect#0;n#TaskFormComponent#0" expanded="false" />
+            <element signature="e#0#77#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.html">
+    <entry file="file://$PROJECT_DIR$/timer-app/node_modules/@swimlane/ngx-charts/release/pie-chart/pie-chart.module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="83" column="49" lean-forward="true" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
+        <state relative-caret-position="95">
+          <caret line="15" column="89" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/app.js">
+    <entry file="file://$PROJECT_DIR$/timer-app/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/dashboard/dash-charts/dash-charts.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/dashboard/dash-charts/dash-charts.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="60" column="3" lean-forward="true" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/dashboard/dashboard.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="154" column="6" lean-forward="true" selection-start-line="154" selection-start-column="6" selection-end-line="154" selection-end-column="6" />
+        <state relative-caret-position="625">
+          <caret line="175" column="21" lean-forward="false" selection-start-line="175" selection-start-column="21" selection-end-line="175" selection-end-column="21" />
           <folding>
             <element signature="e#344#379#0" expanded="false" />
             <element signature="e#463#575#0" expanded="false" />
@@ -730,26 +500,313 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/config/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/models/analysis.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <element signature="e#213#646#0" expanded="false" />
+            <element signature="e#702#1182#0" expanded="false" />
+            <element signature="e#1238#2364#0" expanded="false" />
+            <element signature="e#2414#2943#0" expanded="false" />
+            <element signature="e#3001#3367#0" expanded="false" />
+            <element signature="e#3416#3785#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/dashboard/dashboard.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/dashboard/dashboard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/objects.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="55" column="23" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/label-add/label-add.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-list/task-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="71" lean-forward="true" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app.component.css">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/completed-tasks/completed-tasks.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/node_modules/firebase/app/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/register/register.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#73#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/register/register.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/register/register.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/tsconfig.app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/.angular-cli.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="28" column="54" lean-forward="false" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/services/auth.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/services/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="989">
+          <caret line="43" column="12" lean-forward="false" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="70" lean-forward="false" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="74" lean-forward="false" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/services/auth-guard.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/home/home.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="71" lean-forward="false" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/navbar/navbar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/services/task.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="53" column="3" lean-forward="true" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/tasks/task-form/task-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="50" column="4" lean-forward="false" selection-start-line="50" selection-start-column="4" selection-end-line="57" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!block;n#deleteTaskFromActiveTasks#0;n#TaskFormComponent#0" expanded="false" />
+            <element signature="n#!!block;n#moveTaskToCompletedTasks#0;n#TaskFormComponent#0" expanded="false" />
+            <element signature="n#!!block;n#deleteTaskFromView#0;n#TaskFormComponent#0" expanded="false" />
+            <element signature="n#!!block;n#deleteCompletedTask#0;n#TaskFormComponent#0" expanded="false" />
+            <element signature="n#!!block;n#removeTaskByIndex#0;n#TaskFormComponent#0" expanded="false" />
+            <element signature="n#!!block;n#updateEditedTask#0;n#TaskFormComponent#0" expanded="false" />
+            <element signature="n#!!block;n#onItemSelect#0;n#TaskFormComponent#0" expanded="false" />
+            <element signature="n#!!block;n#onItemDeSelect#0;n#TaskFormComponent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/services/dashboard.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timer-app/src/app/components/dashboard/dash-charts/dash-charts.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
           <folding />
         </state>
       </provider>

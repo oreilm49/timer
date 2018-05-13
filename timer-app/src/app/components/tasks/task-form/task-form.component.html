@@ -27,17 +27,6 @@
       </div>
       <!--labels-->
       <div class="label-dropdown input-group mb-3 col-md">
-        <!--<select-->
-          <!--[multiple]=""-->
-          <!--[(ngModel)]="label"-->
-          <!--name="label"-->
-          <!--class="custom-select"-->
-          <!--id="inputGroupSelect01"-->
-          <!--required-->
-        <!--&gt;-->
-          <!--<option [ngValue]="undefined" disabled  selected>Labels</option>-->
-          <!--<option *ngFor="let label of labels" value="{{label._id}}">{{label.name}}</option>-->
-        <!--</select>-->
         <ng-multiselect-dropdown
           [placeholder]="'Labels'"
           [data]="labels"
@@ -56,10 +45,14 @@
         </div>
       </div>
       <!--start date-->
-      <div class="form-group">
+      <div class="form-group col-md">
         <div class="input-group">
-          <input class="form-control" placeholder="Start Date"
-                 name="dp" [(ngModel)]="start_time" ngbDatepicker #d="ngbDatepicker">
+          <input
+            class="form-control"
+            placeholder="Start Date"
+            name="dp"
+            [(ngModel)]="start_time"
+            ngbDatepicker #d="ngbDatepicker">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
               <i class="far fa-calendar-alt" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i>

@@ -1,7 +1,7 @@
 <div class="row task-list-item border">
   <div class="col conceal" #taskId>{{listItem._id}}</div>
   <div class="col conceal" #taskIndex>{{i}}</div>
-  <div class="time"><strong>{{listItem.start_time | date: 'dd MMM'}}</strong></div>
+  <div class="time"><p><strong>{{listItem.start_time | date: 'dd MMM'}}</strong></p></div>
   <div class="task-name">{{listItem.name}}</div>
   <div class="duration">{{listItem.duration}} mins</div>
   <div class="edit-buttons">

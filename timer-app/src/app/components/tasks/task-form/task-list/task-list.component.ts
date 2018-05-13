@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, ElementRef, Output, ViewChild, Renderer2, EventEmitter, ViewEncapsulation} from '@angular/core';
-import {CompletedTask, TaskObject} from "../../../../objects";
+import {TaskObject} from "../../../../objects";
 import {TaskService} from "../../../../services/task.service";
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 

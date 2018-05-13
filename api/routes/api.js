@@ -153,6 +153,30 @@ router.get('/time/label/:period', function (req, res, next) {
     analysisModel.timeByLabel(period, function(labels) {
         res.send(labels)
     })
-
 });
+
+//# tasks by label
+router.get('/label/tasks/:period', function (req, res, next) {
+    let period = req.params.period; //today, this week, this month
+    analysisModel.timeByLabel(period, function(labels) {
+        res.send(labels)
+    })
+});
+
+router.get('/tasks/completed/scheduled/:period', function (req, res, next) {
+    let period = req.params.period; //today, this week, this month
+    analysisModel.completedVScheduled(period, function(data) {
+        res.send(data)
+    })
+});
+
+router.get('/tasks/averagetime/:period', function (req, res, next) {
+    let period = req.params.period; //today, this week, this month
+    analysisModel.timeByTask(period, function(data) {
+        res.send(data)
+    })
+});
+
+
+
 module.exports = router;

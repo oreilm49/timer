@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, ViewChild, Output, EventEmitter} from '@angular/core';
-import {CompletedTask, TaskObject} from "../../../../objects";
+import {TaskObject} from "../../../../objects";
 import {TaskService} from "../../../../services/task.service";
 
 @Component({
@@ -8,7 +8,7 @@ import {TaskService} from "../../../../services/task.service";
   styleUrls: ['./completed-tasks.component.css']
 })
 export class CompletedTasksComponent implements OnInit {
-  @Input() completedTask: CompletedTask;
+  @Input() completedTask: TaskObject;
   @Output() removeCompletedTask = new EventEmitter<TaskObject>();
   @ViewChild('taskId') taskId;
 

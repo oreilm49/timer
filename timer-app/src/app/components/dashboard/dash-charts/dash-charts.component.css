@@ -1,0 +1,14 @@
+.charts-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 20px;
+}
+
+.dash-chart {
+  text-align: center;
+  background-color: #f3f3f3;
+}
+
+.modebar {
+  display: none !important;
+}

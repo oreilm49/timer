@@ -1,8 +1,10 @@
 const db = require('../config/db');
 const echasync = require('echasync');
 const moment = require('moment');
+const d3 = require('d3');
 
-const getTaskDurations = function (period, callback) {
+// Time spent per label
+const getCompletedTasks = function (period, callback) {
     let start = moment().startOf(period);
     let end = moment().endOf(period);
     db.tasksModel.find(
@@ -18,9 +20,26 @@ const getTaskDurations = function (period, callback) {
             }
         )
 };
-
+const getScheduledTasks = function (period, callback) {
+    let start = moment().startOf(period);
+    let end = moment().endOf(period);
+    db.tasksModel.find(
+        {start_time: {$gte: (start.unix()) * 1000, $lt: (end.unix()) * 1000},
+        end_time: {$exists: false}
+        }
+    )
+        .select('-user -name -start_time -end_time -__v')
+        .exec(
+            function (err, tasks) {
+                if (err) {
+                    callback(err)
+                }
+                callback(tasks)
+            }
+        )
+};
 const labelDurationList = function (period, callback) {
-    getTaskDurations(period, function (tasks) {
+    getCompletedTasks(period, function (tasks) {
         // search for the taskid in labels and return object with label & time
         let output = [];
         echasync.do(tasks, function (nextFile, task) {
@@ -35,7 +54,8 @@ const labelDurationList = function (period, callback) {
                             output.push(
                                 {
                                     "label": name,
-                                    "duration": duration
+                                    "duration": duration,
+                                    "task": task._id
                                 }
                             );
                             nextFile();
@@ -50,13 +70,57 @@ const labelDurationList = function (period, callback) {
         )
     })
 };
-
 const timeByLabel = function (period, callback) {
     labelDurationList(period, function (labels) {
-        callback(labels)
+
+        let labelsMetrics;
+        labelsMetrics = d3.nest()
+            .key(function (d) {
+                return d.label;
+            })
+            .rollup(function (v) {
+                return {
+                    count: v.length,
+                    total: d3.sum(v, function (d) {
+                        return d.duration;
+                    }),
+                };
+            })
+            .entries(labels);
+        callback(JSON.stringify(labelsMetrics))
+    })
+};
+const completedVScheduled = function (period, callback) {
+    getCompletedTasks(period, function(completed) {
+        getScheduledTasks(period, function(scheduled) {
+            callback(
+                {
+                    "completed": completed.length,
+                    "scheduled": scheduled.length,
+                    "total": completed.length+scheduled.length
+                }
+            )
+        })
+    })
+};
+const timeByTask = function (period, callback) {
+    labelDurationList(period, function (tasks) {
+        let count = 0;
+        let duration = 0;
+        echasync.do(tasks, function (nextFile, task) {
+            count++;
+            duration += task.duration;
+            nextFile();
+        },
+            function() {
+            callback({"count":count,"duration":duration})
+            }
+            )
     })
 };
 
 module.exports = {
-    timeByLabel
+    timeByLabel,
+    completedVScheduled,
+    timeByTask
 };

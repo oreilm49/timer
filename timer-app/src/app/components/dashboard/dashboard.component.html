@@ -1,0 +1,30 @@
+<div class="dashboard-grid">
+  <div class="control-bar">
+    <form>
+      <select
+        class="time-select"
+        (change)="passChartData($event.target.value); getCompletedTasks($event.target.value)"
+        id="time-select"
+        [(ngModel)]="timeFrameSelect"
+        name="timeFrameSelect">
+        <option [ngValue]="day" disabled  selected>Select Time Frame</option>
+        <option value="day">Today</option>
+        <option value="week">This Week</option>
+        <option value="month">Month To Date</option>
+        <option value="year">Year To Date</option>
+      </select>
+    </form>
+  </div>
+  <div class="stats">
+    <div class="tasks-completed">
+      <p>Tasks Completed</p>
+      <h2>{{completedTasks.completed}}/{{completedTasks.total}}</h2>
+    </div>
+    <div class="time-per-task">
+      <p>Average Time Per Task</p>
+      <h2>{{avgTimePerTask}} minutes</h2>
+    </div>
+  </div>
+  <app-dash-charts class="dash-charts" [time]="timeFrameSelect"></app-dash-charts>
+</div>
+

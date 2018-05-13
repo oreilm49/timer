@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {CompletedTask, TaskObject} from "../../../../../objects";
+import {TaskObject} from "../../../../../objects";
 import {TaskService} from "../../../../../services/task.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {LabelService} from "../../../../../services/label.service";
@@ -12,7 +12,7 @@ import {ValidatorService} from "../../../../../services/validator.service";
   styleUrls: ['./task-edit-popover.component.css']
 })
 export class TaskEditPopoverComponent implements OnInit {
-  @Input() activeTask: CompletedTask;
+  @Input() activeTask: TaskObject;
   @Input() index;
   @Output() editedTask = new EventEmitter<TaskObject>();
   @Output() editedTaskIndex = new EventEmitter<number>();
@@ -57,7 +57,7 @@ export class TaskEditPopoverComponent implements OnInit {
       this.end_time = this.activeTask.end_time;
     }
 
-    const task: CompletedTask = {
+    const task: TaskObject = {
       user: this.userId,
       _id: this.id,
       name: this.name,
