@@ -22,7 +22,7 @@ export class LabelService {
   constructor(private http: HttpClient) {
   }
 
-  /** POST: add a new task to the database */
+  /** POST: add a new task to a label */
   taskToLabel(label: AddLabel): Observable<NewLabelObject[]> {
     return this.http.post<NewLabelObject[]>(this.taskToLabelUrl, label)
   };

@@ -5,3 +5,18 @@
   grid-template-columns: 5% 5% 5% 5% 5% auto;
   grid-row: 1 / span 1;
 }
+
+.profile-photo {
+  float: left;
+  margin-left: 20px;
+  background-size: auto 100%; /* Interchange this value depending on prefering width vs. height */
+  width: 40px;
+  height: 40px;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: #ffffff;
+}

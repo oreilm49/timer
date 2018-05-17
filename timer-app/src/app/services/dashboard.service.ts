@@ -13,16 +13,16 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
-  getTaskData(period): Observable<LabelData[]> {
-    return this.http.get<LabelData[]>(this.taskDataUrl+period)
+  getTaskData(period, user): Observable<LabelData[]> {
+    return this.http.get<LabelData[]>(this.taskDataUrl+period+"/"+user)
       .pipe(catchError(this.handleError))
   }
-  getCompletedData(period): Observable<TaskData[]> {
-    return this.http.get<TaskData[]>(this.completedDataUrl+period)
+  getCompletedData(period, user): Observable<TaskData[]> {
+    return this.http.get<TaskData[]>(this.completedDataUrl+period+"/"+user)
       .pipe(catchError(this.handleError))
   }
-  getCountDurationData(period): Observable<CountDuration> {
-    return this.http.get<CountDuration>(this.countDurationUrl+period)
+  getCountDurationData(period, user): Observable<CountDuration> {
+    return this.http.get<CountDuration>(this.countDurationUrl+period+"/"+user)
       .pipe(catchError(this.handleError))
   }
 

@@ -27,7 +27,7 @@ export class DashChartsComponent implements OnInit, OnChanges{
     ) { }
 
   ngOnInit() {
-    this.getChartData(this.time);
+    this.getChartData(this.time, this.userId);
     this.afAuth.authState.subscribe(res => {
       if (res && res.uid) {
         console.log('user is logged in: '+res.uid);
@@ -42,11 +42,11 @@ export class DashChartsComponent implements OnInit, OnChanges{
     this.timeByLabelData = [];
     this.tasksByLabelData = [];
     this.timeByLabelLabels = [];
-    this.getChartData(this.time);
+    this.getChartData(this.time, this.userId);
   }
 
-  getChartData(period) {
-    this.dashService.getTaskData(period)
+  getChartData(period, user) {
+    this.dashService.getTaskData(period, user)
       .subscribe(
         value => {
           for(let i = 0; i< value.length;i++) {

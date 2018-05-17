@@ -16,6 +16,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item" *ngIf="!authenticated" ><a class="nav-link" (click)="login()">Login</a></li>
       <li class="nav-item" *ngIf="authenticated" ><a class="nav-link" (click)="logout()">Logout</a></li>
+      <li class="nav-item profile-photo" *ngIf="authenticated" ><img src="{{photo}}"></li>
     </ul>
   </div>
 

@@ -6,11 +6,6 @@ html, body {
   box-sizing: border-box;
 }
 
-router-outlet {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
 @media only screen and (min-width: 1000px){
   app-dashboard, app-tasks, app-labels, app-projects {
     padding-left: 250px;

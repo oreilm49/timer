@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {dateEntry, ReturnedLabelObject, TaskObject, NewLabelObject, AddLabel} from "../../../objects";
 import {LabelObject} from "../../../objects"
 import {TaskService} from "../../../services/task.service";
@@ -6,6 +6,8 @@ import {LabelService} from "../../../services/label.service";
 import {ValidatorService} from "../../../services/validator.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AngularFireAuth} from "angularfire2/auth";
+import * as firebase from "firebase";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-task-form',
@@ -18,6 +20,7 @@ export class TaskFormComponent implements OnInit {
   completedTasks: TaskObject[];
 
   userId: string;
+  user: Observable<firebase.User>;
   // task form variables
   name: string;
   duration: number;
@@ -26,20 +29,25 @@ export class TaskFormComponent implements OnInit {
   end_time: number;
   id: string;
   dropdownSettings = {};
+  authenticated: boolean;
 
-  constructor(
-              private taskService: TaskService,
+  constructor(private taskService: TaskService,
               private labelService: LabelService,
               private validatorService: ValidatorService,
               private flashMessagesService: FlashMessagesService,
-              public afAuth: AngularFireAuth
-              ) {
+              public afAuth: AngularFireAuth,
+              public af: AngularFireAuth,) {
+    this.af.authState.subscribe(
+      (auth) => {
+        if (auth != null) {
+          this.user = af.authState;
+          this.authenticated = true;
+        }
+      });
   }
 
   ngOnInit() {
-    this.getTasks(this.userId);
-    this.getLabels(this.userId);
-    this.getCompletedTasks(this.userId);
+
     this.dropdownSettings = {
       idField: '_id',
       textField: 'name',
@@ -50,8 +58,10 @@ export class TaskFormComponent implements OnInit {
     };
     this.afAuth.authState.subscribe(res => {
       if (res && res.uid) {
-        console.log('user is logged in: '+res.uid);
         this.userId = res.uid;
+        this.getTasks(res.uid);
+        this.getLabels(res.uid);
+        this.getCompletedTasks(res.uid);
       } else {
         console.log('user not logged in');
       }
@@ -59,8 +69,8 @@ export class TaskFormComponent implements OnInit {
   }
 
   onTaskSubmit() {
-    let date=this.start_time;
-    let newDate = date.month+"/"+date.day+"/"+date.year;
+    let date = this.start_time;
+    let newDate = date.month + "/" + date.day + "/" + date.year;
     let newDateNumber = new Date(newDate).getTime();
 
     const task: TaskObject = {
@@ -86,7 +96,7 @@ export class TaskFormComponent implements OnInit {
             this.name = '';
 
             const labelsToAdd = [];
-            for(let i = 0;i < this.label.length;i++) {
+            for (let i = 0; i < this.label.length; i++) {
               labelsToAdd.push(this.label[i]._id)
             }
             this.labelService.taskToLabel(
@@ -97,11 +107,11 @@ export class TaskFormComponent implements OnInit {
             )
               .subscribe(
                 value => {
-                  console.log("new labels created: "+value)
+                  console.log("new labels created: " + value)
                   this.label = [];
                 },
                 error => {
-                  console.log("Error creating labels: "+error)
+                  console.log("Error creating labels: " + error)
                 }
               )
           },
@@ -110,6 +120,7 @@ export class TaskFormComponent implements OnInit {
           });
     }
   }
+
   getTasks(user) {
     this.taskService.getAllTasks(user)
       .subscribe(
@@ -158,7 +169,7 @@ export class TaskFormComponent implements OnInit {
     this.getLabels(this.userId)
   }
 
-  removeTaskByIndex(index){
+  removeTaskByIndex(index) {
     console.log(index);
     this.tasks.splice(index, 1)
   }
@@ -167,14 +178,14 @@ export class TaskFormComponent implements OnInit {
     this.tasks.push(task)
   }
 
-  onItemSelect(item:any){
+  onItemSelect(item: any) {
     console.log(this.label);
     this.label.push(
       item._id
     );
   }
 
-  onItemDeSelect(label:any){
+  onItemDeSelect(label: any) {
     this.label = this.label.filter(item => item !== label._id);
   }
 

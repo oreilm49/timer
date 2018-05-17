@@ -5,6 +5,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {TaskService} from "../../../../../services/task.service";
 import {LabelService} from "../../../../../services/label.service";
 import {NgbPopoverConfig} from '@ng-bootstrap/ng-bootstrap';
+import {AngularFireAuth} from "angularfire2/auth";
 
 @Component({
   selector: 'app-task-popover',
@@ -17,7 +18,7 @@ export class TaskPopoverComponent implements OnInit {
   @Output() completeTask = new EventEmitter<TaskObject>();
   @Output() closePop = new EventEmitter();
   // task form variables
-  userId: '1';
+  userId: string;
   id: string;
   name: string;
   duration: number;
@@ -25,6 +26,7 @@ export class TaskPopoverComponent implements OnInit {
   label: string;
   end_time: number;
   time: TimeObject;
+
 
   //time input controls
   minuteStep = 15;
@@ -36,13 +38,21 @@ export class TaskPopoverComponent implements OnInit {
     private flashMessagesService: FlashMessagesService,
     private taskService: TaskService,
     private labelService: LabelService,
+    public afAuth: AngularFireAuth,
     config: NgbPopoverConfig
   ) {
     config.container = 'body';
   }
 
   ngOnInit() {
-
+    this.afAuth.authState.subscribe(res => {
+      if (res && res.uid) {
+        console.log('user is logged in: '+res.uid);
+        this.userId = res.uid;
+      } else {
+        console.log('user not logged in');
+      }
+    });
   }
 
   taskFinished() {

@@ -5,6 +5,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {LabelService} from "../../../../../services/label.service";
 import {NgbPopoverConfig} from "@ng-bootstrap/ng-bootstrap";
 import {ValidatorService} from "../../../../../services/validator.service";
+import {AngularFireAuth} from "angularfire2/auth";
 
 @Component({
   selector: 'app-task-edit-popover',
@@ -19,7 +20,7 @@ export class TaskEditPopoverComponent implements OnInit {
   @Output() closePop = new EventEmitter();
 
   // task form variables
-  userId: '1';
+  userId: string;
   id: string;
   name: string;
   duration: number;
@@ -32,12 +33,21 @@ export class TaskEditPopoverComponent implements OnInit {
     private flashMessagesService: FlashMessagesService,
     private taskService: TaskService,
     private labelService: LabelService,
+    public afAuth: AngularFireAuth,
     config: NgbPopoverConfig
   ) {
     config.container = 'body';
   }
 
   ngOnInit() {
+    this.afAuth.authState.subscribe(res => {
+      if (res && res.uid) {
+        console.log('user is logged in: '+res.uid);
+        this.userId = res.uid;
+      } else {
+        console.log('user not logged in');
+      }
+    });
   }
 
   taskUpdate() {

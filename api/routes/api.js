@@ -148,31 +148,35 @@ router.post('/task/update/', function (req, res, next) {
 });
 
 //Time spent per label
-router.get('/time/label/:period', function (req, res, next) {
+router.get('/time/label/:period/:user', function (req, res, next) {
     let period = req.params.period; //today, this week, this month
-    analysisModel.timeByLabel(period, function(labels) {
+    let user = req.params.user;
+    analysisModel.timeByLabel(period, user, function(labels) {
         res.send(labels)
     })
 });
 
 //# tasks by label
-router.get('/label/tasks/:period', function (req, res, next) {
+router.get('/label/tasks/:period/:user', function (req, res, next) {
     let period = req.params.period; //today, this week, this month
-    analysisModel.timeByLabel(period, function(labels) {
+    let user = req.params.user;
+    analysisModel.timeByLabel(period, user, function(labels) {
         res.send(labels)
     })
 });
 
-router.get('/tasks/completed/scheduled/:period', function (req, res, next) {
+router.get('/tasks/completed/scheduled/:period/:user', function (req, res, next) {
     let period = req.params.period; //today, this week, this month
-    analysisModel.completedVScheduled(period, function(data) {
+    let user = req.params.user;
+    analysisModel.completedVScheduled(period,user, function(data) {
         res.send(data)
     })
 });
 
-router.get('/tasks/averagetime/:period', function (req, res, next) {
+router.get('/tasks/averagetime/:period/:user', function (req, res, next) {
     let period = req.params.period; //today, this week, this month
-    analysisModel.timeByTask(period, function(data) {
+    let user = req.params.user;
+    analysisModel.timeByTask(period, user, function(data) {
         res.send(data)
     })
 });

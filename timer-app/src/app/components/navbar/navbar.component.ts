@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {AngularFireAuth} from "angularfire2/auth";
 import {Observable} from "rxjs/Observable";
@@ -12,12 +12,15 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
   user: Observable<firebase.User>;
+  photo: string;
+  userId: string;
   authenticated: boolean = false;
 
   constructor(
     private authService: AuthService,
     public af: AngularFireAuth,
-    private router: Router
+    private router: Router,
+    public afAuth: AngularFireAuth
     ) {
     this.af.authState.subscribe(
       (auth) => {
@@ -29,9 +32,15 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-  authLogout() {
-    this.authService.logout()
+    this.afAuth.authState.subscribe(res => {
+      if (res && res.uid) {
+        console.log('user is logged in: '+res.uid);
+        this.photo = res.photoURL;
+        this.userId = res.uid;
+      } else {
+        console.log('user not logged in');
+      }
+    });
   }
 
   login() {

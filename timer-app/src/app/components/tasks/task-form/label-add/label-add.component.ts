@@ -3,6 +3,7 @@ import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 import {Renderer2} from "@angular/core";
 import {LabelService} from "../../../../services/label.service";
 import {NewLabelObject, LabelObject, ReturnedLabelObject, CreateLabelObject} from "../../../../objects";
+import {AngularFireAuth} from "angularfire2/auth";
 
 @Component({
   selector: 'app-label-add',
@@ -15,24 +16,33 @@ export class LabelAddComponent implements OnInit {
   @Output() createdLabel = new EventEmitter<ReturnedLabelObject>();
 
   labelName: string;
-  user: string = '1';
+  userId: string;
 
   constructor(config: NgbDropdownConfig,
               public renderer: Renderer2,
-              private labelService: LabelService
+              private labelService: LabelService,
+              public afAuth: AngularFireAuth
               ) {
     config.placement = 'bottom';
     config.autoClose = false;
   }
 
   ngOnInit() {
+    this.afAuth.authState.subscribe(res => {
+      if (res && res.uid) {
+        console.log('user is logged in: '+res.uid);
+        this.userId = res.uid;
+      } else {
+        console.log('user not logged in');
+      }
+    });
   }
 
   onNewLabel(event) {
     if(event.keyCode == 13) {
       const label: CreateLabelObject = {
         name: this.labelName,
-        user: this.user,
+        user: this.userId,
       };
       console.log('new label created: '+ this.labelName);
       this.labelDrop.close();

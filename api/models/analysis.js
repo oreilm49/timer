@@ -4,28 +4,13 @@ const moment = require('moment');
 const d3 = require('d3');
 
 // Time spent per label
-const getCompletedTasks = function (period, callback) {
+const getCompletedTasks = function (period, user, callback) {
     let start = moment().startOf(period);
     let end = moment().endOf(period);
     db.tasksModel.find(
-        {end_time: {$gte: (start.unix()) * 1000, $lt: (end.unix()) * 1000}}
-    )
-        .select('-user -name -start_time -end_time -__v')
-        .exec(
-            function (err, tasks) {
-                if (err) {
-                    callback(err)
-                }
-                callback(tasks)
-            }
-        )
-};
-const getScheduledTasks = function (period, callback) {
-    let start = moment().startOf(period);
-    let end = moment().endOf(period);
-    db.tasksModel.find(
-        {start_time: {$gte: (start.unix()) * 1000, $lt: (end.unix()) * 1000},
-        end_time: {$exists: false}
+        {
+            end_time: {$gte: (start.unix()) * 1000, $lt: (end.unix()) * 1000},
+            user: user
         }
     )
         .select('-user -name -start_time -end_time -__v')
@@ -38,8 +23,28 @@ const getScheduledTasks = function (period, callback) {
             }
         )
 };
-const labelDurationList = function (period, callback) {
-    getCompletedTasks(period, function (tasks) {
+const getScheduledTasks = function (period, user, callback) {
+    let start = moment().startOf(period);
+    let end = moment().endOf(period);
+    db.tasksModel.find(
+        {
+            start_time: {$gte: (start.unix()) * 1000, $lt: (end.unix()) * 1000},
+            end_time: {$exists: false},
+            user: user
+        }
+    )
+        .select('-user -name -start_time -end_time -__v')
+        .exec(
+            function (err, tasks) {
+                if (err) {
+                    callback(err)
+                }
+                callback(tasks)
+            }
+        )
+};
+const labelDurationList = function (period, user, callback) {
+    getCompletedTasks(period, user, function (tasks) {
         // search for the taskid in labels and return object with label & time
         let output = [];
         echasync.do(tasks, function (nextFile, task) {
@@ -70,8 +75,8 @@ const labelDurationList = function (period, callback) {
         )
     })
 };
-const timeByLabel = function (period, callback) {
-    labelDurationList(period, function (labels) {
+const timeByLabel = function (period, user, callback) {
+    labelDurationList(period, user, function (labels) {
 
         let labelsMetrics;
         labelsMetrics = d3.nest()
@@ -90,9 +95,9 @@ const timeByLabel = function (period, callback) {
         callback(JSON.stringify(labelsMetrics))
     })
 };
-const completedVScheduled = function (period, callback) {
-    getCompletedTasks(period, function(completed) {
-        getScheduledTasks(period, function(scheduled) {
+const completedVScheduled = function (period, user, callback) {
+    getCompletedTasks(period, user, function(completed) {
+        getScheduledTasks(period, user, function(scheduled) {
             callback(
                 {
                     "completed": completed.length,
@@ -103,8 +108,8 @@ const completedVScheduled = function (period, callback) {
         })
     })
 };
-const timeByTask = function (period, callback) {
-    labelDurationList(period, function (tasks) {
+const timeByTask = function (period, user, callback) {
+    labelDurationList(period, user, function (tasks) {
         let count = 0;
         let duration = 0;
         echasync.do(tasks, function (nextFile, task) {
