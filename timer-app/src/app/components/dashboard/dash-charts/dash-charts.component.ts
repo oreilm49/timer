@@ -27,10 +27,10 @@ export class DashChartsComponent implements OnInit, OnChanges{
     ) { }
 
   ngOnInit() {
-    this.getChartData(this.time, this.userId);
     this.afAuth.authState.subscribe(res => {
       if (res && res.uid) {
         console.log('user is logged in: '+res.uid);
+        this.getChartData(this.time, res.uid);
         this.userId = res.uid;
       } else {
         console.log('user not logged in');
@@ -75,7 +75,7 @@ export class DashChartsComponent implements OnInit, OnChanges{
       title: "Time Spent / Label (minutes)",
       height: 400,
       width: 400,
-      paper_bgcolor: "#f3f3f3"
+      paper_bgcolor: "#f3f3f3",
     };
     Plotly.plot(element, data ,layout, {displayModeBar: false});
   }

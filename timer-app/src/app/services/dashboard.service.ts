@@ -21,8 +21,8 @@ export class DashboardService {
     return this.http.get<TaskData[]>(this.completedDataUrl+period+"/"+user)
       .pipe(catchError(this.handleError))
   }
-  getCountDurationData(period, user): Observable<CountDuration> {
-    return this.http.get<CountDuration>(this.countDurationUrl+period+"/"+user)
+  getCountDurationData(period, user): Observable<number> {
+    return this.http.get<number>(this.countDurationUrl+period+"/"+user)
       .pipe(catchError(this.handleError))
   }
 

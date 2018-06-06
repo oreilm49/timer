@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const model = require('../models/api');
 const analysisModel = require('../models/analysis');
-const db = require('../config/db');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -58,12 +57,8 @@ router.post('/task/create', function (req, res, next) {
         start_time: req.body.start_time,
         end_time: req.body.end_time
     };
-    model.createTask(task, function (err, createdTask) {
-        if (err) {
-            console.log(err);
-            res.send(err);
-        }
-        // res.json(createdTask)
+    model.createTask(task, function (createdTask) {
+        res.send(createdTask)
     })
 });
 
@@ -80,12 +75,8 @@ router.post('/label/create', function (req, res, next) {
         user: req.body.user,
         name: req.body.name,
     };
-    model.createLabel(label, function (err, createdLabel) {
-        if (err) {
-            console.log(err);
-            res.send(err);
-        }
-        res.json(createdLabel)
+    model.createLabel(label, function (createdLabel) {
+        res.send(createdLabel)
     })
 });
 

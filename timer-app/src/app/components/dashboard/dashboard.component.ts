@@ -29,6 +29,7 @@ export class DashboardComponent implements OnInit {
     this.afAuth.authState.subscribe(res => {
       if (res && res.uid) {
         this.getCompletedTasks(this.timeFrameSelect, res.uid);
+        this.userId = res.uid;
         this.getAvgTime(this.timeFrameSelect, res.uid);
       } else {
         console.log('user not logged in');
@@ -49,7 +50,7 @@ export class DashboardComponent implements OnInit {
   getAvgTime(period, user) {
     this.dashService.getCountDurationData(period, user)
       .subscribe(
-        value => this.avgTimePerTask = value.duration/value.count,
+        value => this.avgTimePerTask = value,
         error => console.log('error loading avg time - getCountDurationData: '+error)
       )
   }

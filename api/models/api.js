@@ -10,9 +10,10 @@ const taskById = function (user, callback) {
         },
         function (err, tasks) {
             if (err) {
-                callback(err);
+                console.log(err);
+            } else if (!tasks){
+                console.log("no tasks")
             }
-            console.log(tasks[0]);
             callback(tasks)
         })
 };
@@ -66,6 +67,7 @@ const createLabel = function (label, callback) {
     let data = new db.labelModel(label);
     data.save()
         .then(function (err, label) {
+            console.log(label);
             if (err) {
                 callback(err)
             }
@@ -100,7 +102,7 @@ const addLabelToTask = function (task, labels, callback) {
 const labelsById = function (user, callback) {
     db.labelModel.find({'user': user}, function (err, labels) {
         if (err) {
-            callback(err);
+            console.log('Error finding labels - fn:labelsById: '+err);
         }
         callback(labels)
     })

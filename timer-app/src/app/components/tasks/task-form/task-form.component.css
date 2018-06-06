@@ -41,7 +41,8 @@
   padding: 0px;
 }
 
-:host /deep/ .multiselect-dropdown[_ngcontent-c4]   .dropdown-btn[_ngcontent-c4] {
+
+ :host /deep/ .multiselect-dropdown[_ngcontent-c5]   .dropdown-btn[_ngcontent-c5] {
   display: inline-block;
   border: 0 !important;
   width: 100%;

@@ -1,0 +1,13 @@
+.container {
+  margin-top: 10%;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.login__card {
+  padding: 2.5%;
+
+}
