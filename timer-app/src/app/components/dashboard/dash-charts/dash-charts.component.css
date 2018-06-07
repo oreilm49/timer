@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-column-gap: 20px;
+  text-align: center;
 }
 
 .dash-chart {
@@ -11,4 +12,12 @@
 
 .modebar {
   display: none !important;
+}
+
+@media (max-width: 900px) {
+  .charts-grid {
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    grid-row-gap: 20px;
+  }
 }

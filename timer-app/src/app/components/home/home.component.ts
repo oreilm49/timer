@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFireAuth} from "angularfire2/auth";
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  authenticated: boolean = false;
+
+  constructor(
+    public af: AngularFireAuth,
+  ) {
+    this.af.authState.subscribe(
+      (auth) => {
+        if(auth != null) {
+          this.authenticated = true;
+        }
+      });
+  }
 
   ngOnInit() {
   }

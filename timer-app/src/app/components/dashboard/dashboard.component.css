@@ -71,3 +71,16 @@
 .no-tasks-p {
   padding-top: 10%;
 }
+
+@media (max-width: 900px) {
+  .tasks-completed {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    margin-bottom: 20px;
+  }
+  .time-per-task {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+  }
+
+}

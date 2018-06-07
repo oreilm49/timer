@@ -17,9 +17,7 @@ export class NavbarComponent implements OnInit {
   authenticated: boolean = false;
 
   constructor(
-    private authService: AuthService,
     public af: AngularFireAuth,
-    private router: Router,
     public afAuth: AngularFireAuth
     ) {
     this.af.authState.subscribe(
@@ -43,30 +41,16 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  login() {
-    this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then((result)=>{
-        this.authenticated = true;
-        console.log('Signed in successfully!');
-      }).catch((error)=>{
-      this.authenticated = false;
-      console.log('Error signing in: ',error);
-    })
-  }
-
   logout() {
     console.log('logout');
     this.af.auth.signOut()
       .then((result)=>{
-        this.router.navigate(['']).then(function(){
           window.location.reload();
           this.authenticated = false;
-        });
         console.log('You were logged out successfully!');
       }).catch((error) =>{
       this.authenticated = true;
       console.log('Error signing out: ',error);
     })
   }
-
 }
