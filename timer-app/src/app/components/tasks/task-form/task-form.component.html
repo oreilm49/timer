@@ -1,91 +1,89 @@
-<div class="task-input">
-  <form (ngSubmit)="onTaskSubmit()">
-    <div class="row">
-      <!--name-->
-      <div class="input-group mb-3">
+<div class="task-enter">
+  <form (click)="activeTrue()">
+    <div class="time-date-picker" *ngIf="active">
+      <div class="datepicker">
         <input
-          [(ngModel)]="name"
-          name="name"
-          type="text"
-          class="form-control task-name-input"
-          placeholder="Create A New Task"
-          aria-label=""
-          aria-describedby="basic-addon1">
+          placeholder="Start Date"
+          name="dp"
+          [(ngModel)]="start_time"
+          ngbDatepicker #d="ngbDatepicker"
+          autocomplete="off"
+          (click)="d.toggle()"
+        >
       </div>
-    </div>
-    <div class="row">
-      <!--duration-->
-      <div class="input-group mb-3 col-md">
+
+      <div class="timepicker">
+        <div>/</div>
         <input
           [(ngModel)]="duration"
           name="duration"
           type="number"
-          class="form-control"
           placeholder="Duration"
+          autocomplete="off"
           aria-label=""
           aria-describedby="basic-addon1">
       </div>
-      <!--labels-->
-      <div class="label-dropdown input-group mb-3 col-md">
-        <ng-multiselect-dropdown
-          [placeholder]="'Labels'"
-          [data]="labels"
-          [(ngModel)]="label"
-          [settings]="dropdownSettings"
-          id="inputGroupSelect01"
-          name="label"
-          class="form-control"
-          (onSelect)="onItemSelect($event)"
-          (onSelectAll)="onSelectAll($event)"
-          (onDeSelect)="onItemDeSelect($event)"
-        >
-        </ng-multiselect-dropdown>
-        <div class="input-group-append">
-          <app-label-add (createdLabel)="newLabelToList($event)"></app-label-add>
-        </div>
-      </div>
-      <!--start date-->
-      <div class="form-group col-md">
-        <div class="input-group">
-          <input
-            class="form-control"
-            placeholder="Start Date"
-            name="dp"
-            [(ngModel)]="start_time"
-            ngbDatepicker #d="ngbDatepicker">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-              <i class="far fa-calendar-alt" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
     </div>
-    <button type="submit" class="btn btn-primary create-task-btn">Create Task</button>
+
+    <!--name-->
+    <div class="task-description"
+         [ngClass]="active? 'task-description': 'task-description-inactive'"
+    >
+      <textarea
+        [(ngModel)]="name"
+        name="name"
+        class="task-name-input"
+      >
+      </textarea>
+    </div>
+
+    <div class="label-div" *ngIf="active">
+      <!--labels-->
+      <ng-multiselect-dropdown
+        [placeholder]="'Labels'"
+        [data]="labels"
+        [(ngModel)]="label"
+        [settings]="dropdownSettings"
+        name="label"
+        (onSelect)="onItemSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+        (onDeSelect)="onItemDeSelect($event)"
+        *ngIf="active"
+      >
+      </ng-multiselect-dropdown>
+      <app-label-add (createdLabel)="newLabelToList($event)"></app-label-add>
+      <div>
+        <i class="fas fa-check-circle" (click)="onTaskSubmit(); activeFalse();"></i>
+      </div>
+    </div>
   </form>
 </div>
 
+
 <div class="taskList">
   <p class="task-list-header"><strong>Active Tasks</strong></p>
-  <app-task-list
-    class=""
-    *ngFor="let task of tasks; let i = index"
-    [listItem]="task"
-    (removeTask)="deleteTaskFromActiveTasks(task); moveTaskToCompletedTasks($event)"
-    (completeTaskEmit)="deleteTaskFromView(task)"
-    (removeTaskIndex)="removeTaskByIndex($event)"
-    (editTask)="updateEditedTask($event)"
-  ></app-task-list>
+  <div class="list-of-tasks">
+    <app-task-list
+      class=""
+      *ngFor="let task of tasks; let i = index"
+      [listItem]="task"
+      (removeTask)="deleteTaskFromActiveTasks(task); moveTaskToCompletedTasks($event)"
+      (completeTaskEmit)="deleteTaskFromView(task)"
+      (removeTaskIndex)="removeTaskByIndex($event)"
+      (editTask)="updateEditedTask($event)"
+    ></app-task-list>
+  </div>
   <br>
   <div class="taskList">
     <p class="task-list-header"><strong>Task Archive</strong></p>
-    <app-completed-tasks
-      class=""
-      *ngFor="let task of completedTasks; let i = index"
-      [completedTask]="task"
-      (removeCompletedTask)="deleteCompletedTask(task)"
-    ></app-completed-tasks>
+    <div class="list-of-tasks">
+      <app-completed-tasks
+        class=""
+        *ngFor="let task of completedTasks; let i = index"
+        [completedTask]="task"
+        (removeCompletedTask)="deleteCompletedTask(task)"
+      ></app-completed-tasks>
+    </div>
   </div>
 </div>
 

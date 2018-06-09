@@ -67,3 +67,7 @@ export class CountDuration {
   count: number;
   duration: number;
 }
+
+export class taskLabels {
+  label: string;
+}

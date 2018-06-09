@@ -7,7 +7,7 @@
 }
 
 .task-list-item {
-  min-height: 150px;
+  min-height: 75px;
   height: auto;
   border-radius: 10px;
   border-color: #ced4da;
@@ -15,28 +15,24 @@
   margin-top: 10px;
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Segoe UI Symbol";
-  display: grid;
-  width: 100%;
-  grid-template-rows: 10% 70% 20%;
-  padding: 5px;
-}
 
-.task-list-item-header {
   display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.task-list-item-header:nth-child(1) {
-  text-align: right;
+  grid-template-columns: 5% 65% 10% 20%;
 }
 
 .time {
-  text-align: left;
+  background-color: #6d9eeb;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  color: #fff;
+  padding-top: 10px;
 }
 
 .task-name {
   width: 100%;
   text-align: left;
+  padding-left: 25px;
+  padding-top: 22px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -48,29 +44,6 @@
 
 .edit-buttons {
   padding-top: 17px;
-  text-align: right;
 }
 
-.delete-button:hover {
-  background-color: #dc3545;
-}
 
-.finished-button:hover {
-  background-color: #28a745;
-}
-
-.edit-button:hover {
-  background-color: #007bff;
-}
-
-.fa-times-circle {
-  color: #fff;
-}
-
-.fa-edit {
-  color: #fff;
-}
-
-.fa-check-circle {
-  color: #fff;
-}

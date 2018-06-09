@@ -18,6 +18,7 @@ export class TaskFormComponent implements OnInit {
   tasks: TaskObject[];
   labels: ReturnedLabelObject[] = [];
   completedTasks: TaskObject[];
+  active: boolean = false;
 
   userId: string;
   user: Observable<firebase.User>;
@@ -53,7 +54,7 @@ export class TaskFormComponent implements OnInit {
       textField: 'name',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 1,
+      itemsShowLimit: 0,
       allowSearchFilter: true,
     };
     this.afAuth.authState.subscribe(res => {
@@ -88,7 +89,7 @@ export class TaskFormComponent implements OnInit {
     } else {
       this.taskService.addTask(task)
         .subscribe(val => {
-            //this.taskList.tasks.push(val);
+            console.log(val);
             this.tasks.push(val);
             this.name = '';
             this.duration = 0;
@@ -187,6 +188,14 @@ export class TaskFormComponent implements OnInit {
 
   onItemDeSelect(label: any) {
     this.label = this.label.filter(item => item !== label._id);
+  }
+
+  activeFalse() {
+    this.active = false;
+  }
+
+  activeTrue() {
+    this.active = true;
   }
 
 }

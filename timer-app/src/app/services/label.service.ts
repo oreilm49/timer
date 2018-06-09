@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {AddLabel, CreateLabelObject, NewLabelObject, ReturnedLabelObject, TaskObject} from "../objects";
+import {AddLabel, CreateLabelObject, NewLabelObject, ReturnedLabelObject, taskLabels, TaskObject} from "../objects";
 import {catchError} from "rxjs/operators";
 import {Observable} from "rxjs/Observable";
 import { HttpHeaders } from '@angular/common/http';
@@ -18,6 +18,7 @@ export class LabelService {
   createLabelUrl: string = 'http://localhost:3000/api/label/create';
   getAllLabelsUrl: string = 'http://localhost:3000/api/labels/';
   taskToLabelUrl: string = 'http://localhost:3000/api/labels/addtask';
+  labelsByTaskUrl: string = 'http://localhost:3000/api/labels-by-task/';
 
   constructor(private http: HttpClient) {
   }
@@ -34,8 +35,14 @@ export class LabelService {
 
   getAllLabels(user) {
     return this.http.get(this.getAllLabelsUrl + user)
-    // TODO include error catching method
+      .pipe(catchError(this.handleError))
   };
+
+  labelsByTask(task: string): Observable<taskLabels[]> {
+    return this.http.get<taskLabels[]>(this.labelsByTaskUrl+task)
+      .pipe(catchError(this.handleError))
+  }
+
   private handleError(error: HttpErrorResponse) {
     // if front end error
     if(error.error instanceof ErrorEvent) {

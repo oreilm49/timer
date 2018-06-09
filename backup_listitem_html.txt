@@ -1,34 +1,15 @@
-  <div class="task-list-item border" (mouseover)="hover=true" (mouseleave)="hover=false">
-    <div class="task-list-item-header">
-      <div class="time">
-        <div class="col conceal" #taskId>{{listItem._id}}</div>
-        <div class="col conceal" #taskIndex>{{i}}</div>
-        <p><strong>{{listItem.start_time | date: 'dd MMM'}}</strong>/ {{listItem.duration}} mins</p>
-      </div>
-      <div>
-        <i class="fas fa-times-circle delete-button" (click)="deleteTask(i)"></i>
-      </div>
-    </div>
-
-    <div class="task-name">{{listItem.name}}</div>
-
-    <div class="task-list-item-footer">
-      <div class="task-list-item-labels">
-        <app-label-list
-
-          [label]="labels[0]"
-          class="labelItem"
-        >
-        </app-label-list>
-        <i class="fas fa-plus-circle"></i>
-      </div>
-      <div class="edit-buttons">
-        <i class="far fa-edit edit-button" (click)="openVerticallyCentered(editTask)" *ngIf="hover"></i>
-        <i class="fas fa-check-circle finished-button" (click)="openVerticallyCentered(completeTask)" *ngIf="hover"></i>
-      </div>
-    </div>
+<div class="row task-list-item border">
+  <div class="col conceal" #taskId>{{listItem._id}}</div>
+  <div class="col conceal" #taskIndex>{{i}}</div>
+  <div class="time"><p><strong>{{listItem.start_time | date: 'dd MMM'}}</strong></p></div>
+  <div class="task-name">{{listItem.name}}</div>
+  <div class="duration">{{listItem.duration}} mins</div>
+  <div class="edit-buttons">
+    <button type="button" class="btn btn-secondary edit-button" (click)="openVerticallyCentered(editTask)"><i class="far fa-edit"></i></button>
+    <button type="button" class="btn btn-success edit-button" (click)="openVerticallyCentered(completeTask)"><i class="fas fa-check-circle"></i></button>
+    <button type="button" class="btn btn-danger" (click)="deleteTask(i)"><i class="fas fa-times-circle"></i></button>
   </div>
-
+</div>
 
 <!--complete task popover-->
 <ng-template #completeTask let-c="close" let-d="dismiss">

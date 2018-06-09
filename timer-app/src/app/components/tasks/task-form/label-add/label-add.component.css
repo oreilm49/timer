@@ -10,3 +10,13 @@
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
+
+.fa-plus-circle {
+  color: darkgray;
+  margin: 15px auto;
+  cursor: pointer;
+}
+
+.fa-plus-circle:hover {
+  color: lightslategrey;
+}

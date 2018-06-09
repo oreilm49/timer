@@ -138,7 +138,6 @@ const taskBy_Id = function (id, callback) {
 };
 
 const updateTask = function (task, callback) {
-    console.log(task);
     db.tasksModel.findByIdAndUpdate(task._id,
         {
             $set: {
@@ -156,6 +155,35 @@ const updateTask = function (task, callback) {
         })
 };
 
+const labelsByTask = function (task, callback) {
+    db.labelModel.find({'tasks.task': task}, function (err, labels) {
+        if (err) {
+            console.log('Error finding labels - fn:labelsByTask: '+err);
+        }
+        callback(labels)
+    })
+};
+
+const labelNamesByTask = function (task, callback) {
+    let output = [];
+    labelsByTask(task, function(labels) {
+        echasync.do(labels, function (nextFile, label) {
+            if(!labels){
+                console.log("error, no labels - fn:labelNames")
+            }
+            output.push({"label": label.name})
+            nextFile()
+        },
+            function(err) {
+                if(err) {
+                    console.log(err)
+                }
+                callback(output)
+            })
+    });
+};
+
+
 
 module.exports = {
     taskById,
@@ -169,5 +197,7 @@ module.exports = {
     taskBy_Id,
     updateTask,
     addLabelToTask,
-    completedTasks
+    completedTasks,
+    labelsByTask,
+    labelNamesByTask
 };

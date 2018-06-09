@@ -172,6 +172,14 @@ router.get('/tasks/averagetime/:period/:user', function (req, res, next) {
     })
 });
 
+// get labels by task id
+router.get('/labels-by-task/:task', function (req, res, next) {
+   let task = req.params.task;
+   model.labelNamesByTask(task, function(data) {
+       res.send(data)
+   })
+});
+
 
 
 module.exports = router;

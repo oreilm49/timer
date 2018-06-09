@@ -35,6 +35,7 @@ import {DashboardService} from "./services/dashboard.service";
 import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./services/auth-guard.service";
 import { HomeComponent } from './components/home/home.component';
+import { LabelListComponent } from './components/tasks/task-form/task-list/label-list/label-list.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { HomeComponent } from './components/home/home.component';
     DashChartsComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    LabelListComponent,
   ],
   imports: [
     BrowserModule,

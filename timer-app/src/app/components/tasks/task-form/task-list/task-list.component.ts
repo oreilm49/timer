@@ -1,7 +1,8 @@
 import {Component, OnInit, Input, ElementRef, Output, ViewChild, Renderer2, EventEmitter, ViewEncapsulation} from '@angular/core';
-import {TaskObject} from "../../../../objects";
+import {taskLabels, TaskObject} from "../../../../objects";
 import {TaskService} from "../../../../services/task.service";
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {LabelService} from "../../../../services/label.service";
 
 
 @Component({
@@ -20,18 +21,21 @@ export class TaskListComponent implements OnInit {
   @Output() removeTaskIndex = new EventEmitter<number>();
   @Output() toComplete = new EventEmitter<TaskObject>();
 
+  labels: taskLabels[];
+
   day: Date;
   month: Date;
 
   constructor(
     private taskService: TaskService,
     private rd: Renderer2,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private labelService: LabelService
             ) {
   }
 
   ngOnInit() {
-
+    this.getTaskLabels(this.listItem._id)
   }
 
   deleteTask() {
@@ -63,6 +67,16 @@ export class TaskListComponent implements OnInit {
 
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
+  }
+
+  getTaskLabels(task) {
+    this.labelService.labelsByTask(task)
+      .subscribe(value => {
+          this.labels = value
+        },
+        error => {
+          console.log('error getting labels: '+error)
+        })
   }
 
 }

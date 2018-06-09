@@ -1,13 +1,13 @@
 <div ngbDropdown #labelDrop="ngbDropdown" role="group" aria-label="Button group with nested dropdown">
-  <button type="button" class="btn btn-outline-secondary label-add-btn" ngbDropdownToggle><i class="fas fa-plus" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i></button>
+  <i ngbDropdownToggle class="fas fa-plus-circle"></i>
   <div class="dropdown-menu" ngbDropdownMenu>
     <form (keydown)="onNewLabel($event)">
-      <div class="input-group mb-3">
+      <div class="label-add-input">
         <input
           [(ngModel)]="labelName"
           name="labelName"
           type="text"
-          class="form-control dropdown-item"
+          class="dropdown-item"
           placeholder="Add New Label"
           aria-label=""
           aria-describedby="basic-addon1">
