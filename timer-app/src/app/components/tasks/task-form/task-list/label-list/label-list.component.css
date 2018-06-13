@@ -1,10 +1,43 @@
-.label-wrapper {
+.label-container {
+  display: grid;
+  grid-template-columns: 80% auto;
+}
+
+.firstLabel {
+  grid-column: 1 / span 1;
   padding: 2px;
   margin: 5px;
   background-color: #f3f3f3;
   color: darkgray;
-  min-width: 75px;
-  width: auto;
+  width: 75px;
   text-align: center;
   border-radius: 5px;
+  overflow: hidden;
+}
+
+.extraLabels {
+  grid-column: 2 / span 1;
+  font-size: small;
+  margin: 5px auto;
+  color: darkgray;
+  text-align: center;
+  padding: 2px;
+}
+
+.dropdown-toggle::after {
+  display:none;
+}
+
+.dropdown-menu.show {
+  min-height: 50px;
+  height: auto;
+  min-width: 75px;
+  width: auto;
+}
+
+.task-labels {
+  text-align: center;
+  margin: 5px auto;
+  color: darkgray;
+  padding: 2px;
 }

@@ -1,4 +1,8 @@
-  <div class="task-list-item border" (mouseover)="hover=true" (mouseleave)="hover=false">
+  <div class="task-list-item border"
+       (mouseover)="hover=true"
+       (mouseleave)="hover=false"
+       (click)="openVerticallyCentered(editTask)"
+  >
     <div class="task-list-item-header">
       <div class="time">
         <div class="col conceal" #taskId>{{listItem._id}}</div>
@@ -10,54 +14,47 @@
       </div>
     </div>
 
-    <div class="task-name">{{listItem.name}}</div>
+    <div class="task-name"><p>{{listItem.name}}</p></div>
 
-    <div class="task-list-item-footer">
+    <div class="task-list-item-footer" *ngIf="hover">
       <div class="task-list-item-labels">
         <app-label-list
-
-          [label]="labels[0]"
+          [label]="first_label"
+          [extra_labels]="extra_labels"
           class="labelItem"
+          [task]="listItem._id"
+          *ngIf="first_label"
         >
         </app-label-list>
-        <i class="fas fa-plus-circle"></i>
+        <!--<i class="fas fa-plus-circle"></i>-->
+        <!--<app-label-add [task]="listItem._id"></app-label-add>-->
       </div>
-      <div class="edit-buttons">
-        <i class="far fa-edit edit-button" (click)="openVerticallyCentered(editTask)" *ngIf="hover"></i>
-        <i class="fas fa-check-circle finished-button" (click)="openVerticallyCentered(completeTask)" *ngIf="hover"></i>
-      </div>
+      <!--<div class="edit-buttons">-->
+        <!--<i class="fas fa-check-circle finished-button" (click)="openVerticallyCentered(completeTask)"></i>-->
+      <!--</div>-->
     </div>
   </div>
 
 
 <!--complete task popover-->
-<ng-template #completeTask let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Confirm Task Details</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <app-task-popover [activeTask]="listItem" (closePop)="d('Cross click')" (completeTask)="emitComplete($event)"></app-task-popover>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
-  </div>
-</ng-template>
+<!--<ng-template #completeTask let-c="close" let-d="dismiss">-->
+  <!--<div class="modal-header">-->
+    <!--<h4 class="modal-title">Confirm Task Details</h4>-->
+    <!--<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">-->
+      <!--<span aria-hidden="true">&times;</span>-->
+    <!--</button>-->
+  <!--</div>-->
+  <!--<div class="modal-body">-->
+    <!--<app-task-popover [activeTask]="listItem" (closePop)="d('Cross click')" (completeTask)="emitComplete($event)"></app-task-popover>-->
+  <!--</div>-->
+  <!--<div class="modal-footer">-->
+    <!--<button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>-->
+  <!--</div>-->
+<!--</ng-template>-->
 
 <!--edit task popover-->
 <ng-template #editTask let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Edit Task Details</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
     <app-task-edit-popover [activeTask]="listItem" (closePop)="c('Close click')" (editedTask)="emitEdit($event)"></app-task-edit-popover>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
-  </div>
 </ng-template>
+
+

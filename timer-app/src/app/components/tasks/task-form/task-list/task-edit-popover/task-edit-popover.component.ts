@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {TaskObject} from "../../../../../objects";
+import {taskLabels, TaskObject} from "../../../../../objects";
 import {TaskService} from "../../../../../services/task.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {LabelService} from "../../../../../services/label.service";
@@ -18,6 +18,7 @@ export class TaskEditPopoverComponent implements OnInit {
   @Output() editedTask = new EventEmitter<TaskObject>();
   @Output() editedTaskIndex = new EventEmitter<number>();
   @Output() closePop = new EventEmitter();
+  labels: taskLabels[];
 
   // task form variables
   userId: string;
@@ -27,6 +28,7 @@ export class TaskEditPopoverComponent implements OnInit {
   start_time: number;
   label: string;
   end_time: number;
+
 
   constructor(
     private validatorService: ValidatorService,
@@ -51,16 +53,16 @@ export class TaskEditPopoverComponent implements OnInit {
   }
 
   taskUpdate() {
-    if (this.id == undefined) {
+    if (!this.id == undefined) {
       this.id = this.activeTask._id;
     }
     if (this.name == undefined) {
       this.name = this.activeTask.name;
     }
-    if (this.duration == undefined) {
+    if (!this.duration) {
       this.duration = this.activeTask.duration;
     }
-    if (this.start_time == undefined) {
+    if (!this.start_time) {
       this.start_time = this.activeTask.start_time;
     }
     if (this.end_time == undefined && this.activeTask.end_time !== undefined) {
@@ -81,7 +83,7 @@ export class TaskEditPopoverComponent implements OnInit {
       this.taskService.completeTask(task)
         .subscribe(val => {
             console.log("Task created: "+val);
-            this.editedTask.emit(task);
+            this.editedTask.emit(val);
             this.closePop.emit();
             this.name = '';
             this.duration = 0;
@@ -96,4 +98,8 @@ export class TaskEditPopoverComponent implements OnInit {
 
 
   }
+
+  taskFinished() {
+  }
+
 }

@@ -1,3 +1,10 @@
-<div class="label-wrapper">
-  {{label.label}}
-</div>
+ <div class="label-container" ngbDropdown #labelDrop="ngbDropdown" role="group" aria-label="Button group with nested dropdown">
+   <div class="firstLabel" ngbDropdownToggle (click)="getTaskLabels(task)">{{label}}</div>
+   <div class="dropdown-menu" ngbDropdownMenu>
+     <div class="task-labels" *ngFor="let label of labels">
+       {{label.label}}
+     </div>
+   </div>
+   <div class="extraLabels" *ngIf="extra_labels > 0"><strong>+{{extra_labels}}</strong></div>
+ </div>
+

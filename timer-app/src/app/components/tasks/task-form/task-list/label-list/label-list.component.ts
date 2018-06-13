@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {LabelService} from "../../../../../services/label.service";
+import {taskLabels} from "../../../../../objects";
 
 @Component({
   selector: 'app-label-list',
@@ -8,6 +9,9 @@ import {LabelService} from "../../../../../services/label.service";
 })
 export class LabelListComponent implements OnInit {
   @Input() label: string;
+  @Input() extra_labels: number;
+  @Input() task: string;
+  labels: taskLabels[];
 
   constructor(private labelService: LabelService) { }
 
@@ -15,6 +19,15 @@ export class LabelListComponent implements OnInit {
 
   }
 
-
+  getTaskLabels(task: string) {
+      this.labelService.labelsByTask(task)
+        .subscribe(labels =>{
+          this.labels = labels;
+          console.log(`${labels.length} labels received`)
+        },
+          error => {
+          console.log(`error fetching labels: ${error}`)
+          })
+  }
 
 }

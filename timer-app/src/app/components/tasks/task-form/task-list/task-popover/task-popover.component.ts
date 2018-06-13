@@ -63,7 +63,6 @@ export class TaskPopoverComponent implements OnInit {
       let newDate = date.month+"/"+date.day+"/"+date.year;
       newDateNumber = new Date(newDate).getTime();
     }
-
     // check for fields with no user input, assign preselected values
     if (this.id == undefined) {
       this.id = this.activeTask._id;

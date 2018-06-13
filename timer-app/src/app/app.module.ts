@@ -8,6 +8,7 @@ import {AngularFireModule} from "angularfire2";
 import {AngularFireAuthModule} from "angularfire2/auth";
 import { environment } from '../environments/environment';
 
+// app components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TasksComponent } from './components/tasks/tasks.component';
@@ -19,23 +20,29 @@ import { HttpClientModule } from "@angular/common/http";
 import {FlashMessagesModule, FlashMessagesService} from "angular2-flash-messages";
 import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component'
-
-import {TaskService} from "./services/task.service";
-import {LabelService} from "./services/label.service";
-import {ValidatorService} from "./services/validator.service";
 import { TaskListComponent } from './components/tasks/task-form/task-list/task-list.component';
 import { TaskPopoverComponent } from './components/tasks/task-form/task-list/task-popover/task-popover.component';
 import { LabelAddComponent } from './components/tasks/task-form/label-add/label-add.component';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { TaskEditPopoverComponent } from './components/tasks/task-form/task-list/task-edit-popover/task-edit-popover.component';
 import { CompletedTasksComponent } from './components/tasks/task-form/completed-tasks/completed-tasks.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashChartsComponent } from './components/dashboard/dash-charts/dash-charts.component';
+import { HomeComponent } from './components/home/home.component';
+import { LabelListComponent } from './components/tasks/task-form/task-list/label-list/label-list.component';
+
+// app services
+import {TaskService} from "./services/task.service";
+import {LabelService} from "./services/label.service";
+import {ValidatorService} from "./services/validator.service";
 import {DashboardService} from "./services/dashboard.service";
 import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./services/auth-guard.service";
-import { HomeComponent } from './components/home/home.component';
-import { LabelListComponent } from './components/tasks/task-form/task-list/label-list/label-list.component';
+
+// external modules
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
+// Material Design Components
+import {MatButtonModule, MatInputModule} from "@angular/material";
 
 
 @NgModule({
@@ -68,7 +75,11 @@ import { LabelListComponent } from './components/tasks/task-form/task-list/label
     NgbModule.forRoot(),
     NgMultiSelectDropDownModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule
+
   ],
   providers: [
     TaskService,

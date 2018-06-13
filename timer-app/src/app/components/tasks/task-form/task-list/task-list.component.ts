@@ -1,8 +1,9 @@
 import {Component, OnInit, Input, ElementRef, Output, ViewChild, Renderer2, EventEmitter, ViewEncapsulation} from '@angular/core';
-import {taskLabels, TaskObject} from "../../../../objects";
+import {taskLabel, taskLabels, TaskObject} from "../../../../objects";
 import {TaskService} from "../../../../services/task.service";
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {LabelService} from "../../../../services/label.service";
+import {TaskEditPopoverComponent} from "./task-edit-popover/task-edit-popover.component";
 
 
 @Component({
@@ -15,13 +16,16 @@ export class TaskListComponent implements OnInit {
   @Input() listItem: TaskObject;
   @ViewChild('taskId') taskId:ElementRef;
   @ViewChild('taskIndex') taskIndex:ElementRef;
+  @ViewChild(TaskEditPopoverComponent)
+  private editComponent: TaskEditPopoverComponent;
   @Output() removeTask = new EventEmitter<TaskObject>();
   @Output() completeTaskEmit = new EventEmitter<TaskObject>();
   @Output() editTask = new EventEmitter<TaskObject>();
   @Output() removeTaskIndex = new EventEmitter<number>();
   @Output() toComplete = new EventEmitter<TaskObject>();
 
-  labels: taskLabels[];
+  first_label: string;
+  extra_labels: number;
 
   day: Date;
   month: Date;
@@ -35,7 +39,7 @@ export class TaskListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getTaskLabels(this.listItem._id)
+    this.getTaskLabelData(this.listItem._id)
   }
 
   deleteTask() {
@@ -66,13 +70,19 @@ export class TaskListComponent implements OnInit {
 
 
   openVerticallyCentered(content) {
-    this.modalService.open(content, { centered: true });
+    const modal = this.modalService.open(content, { centered: true });
+    modal. result.then(() => { this.editComponent.taskUpdate() }, () => { this.editComponent.taskUpdate()})
   }
 
-  getTaskLabels(task) {
-    this.labelService.labelsByTask(task)
+  getTaskLabelData(task) {
+    this.labelService.labelsDataByTask(task)
       .subscribe(value => {
-          this.labels = value
+        if(value.label_1){
+          this.first_label = value.label_1.label;
+        }
+        if(value.number){
+          this.extra_labels = value.number;
+        }
         },
         error => {
           console.log('error getting labels: '+error)

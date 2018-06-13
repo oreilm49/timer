@@ -1,78 +1,95 @@
-<div class="task-input">
-  <form (ngSubmit)="taskUpdate()">
+<div class="task-enter">
+  <form>
+    <div class="edit-task-header"
+    >
+      <div class="time-date-picker"
+           *ngIf="!almostCompleted">
+        <div class="datepicker">
+          <input
+            placeholder="{{activeTask.start_time | date: 'dd-MMM'}}"
+            value="{{activeTask.start_time | date: 'dd-MMM'}}"
+            name="dp"
+            [(ngModel)]="start_time"
+            ngbDatepicker #d="ngbDatepicker"
+            autocomplete="off"
+            (click)="d.toggle()"
+          >
+        </div>
+
+        <div class="timepicker">
+          <div>/</div>
+          <input
+            [(ngModel)]="duration"
+            name="duration"
+            type="number"
+            placeholder="{{activeTask.duration}}"
+            value="{{activeTask.duration}}"
+            autocomplete="off"
+            aria-label=""
+            aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="close-popover-button">
+        <i class="fas fa-times-circle" (click)="taskUpdate();"></i>
+      </div>
+    </div>
 
     <!--name-->
-    <div class="row form-group mb-3 col-md">
-      <label for="task-name-input">Task Name:</label>
-      <input
+    <div class="task-description">
+      <p class="row"
+         *ngIf="almostCompleted"
+         id="completed-header"
+      >Enter the time you started and submit the task</p>
+      <div class="complete-task row" *ngIf="almostCompleted">
+        <ngb-timepicker
+          [(ngModel)]="time"
+          id="time-input"
+          name="time"
+          [meridian]="meridian"
+          [minuteStep]="minuteStep"
+        ></ngb-timepicker>
+      </div>
+      <div>
+        <button mat-button
+                class="complete-button row"
+                (click)="taskFinished();"
+                *ngIf="almostCompleted"
+                id="completed-submit"
+        >Submit</button>
+      </div>
+      <textarea
         [(ngModel)]="name"
         name="name"
-        type="text"
-        id="task-name-input"
-        class="form-control task-name-input"
-        value="{{activeTask.name}}"
+        class="task-name-input"
         placeholder="{{activeTask.name}}"
-        aria-label=""
-        aria-describedby="basic-addon1">
+        *ngIf="!almostCompleted"
+      >
+        {{activeTask.name}}
+      </textarea>
     </div>
 
-    <!--labels-->
-    <div class="row col-md">
-      <label for="label-input">Labels:</label>
-    </div>
-    <div class="row input-group mb-3 col-md">
-      <select
+    <div class="label-div"
+         *ngIf="!almostCompleted"
+
+    >
+      <!--labels-->
+      <ng-multiselect-dropdown
+        [placeholder]="'Labels'"
+        [data]="labels"
         [(ngModel)]="label"
+        [settings]="dropdownSettings"
         name="label"
-        class="custom-select"
-        id="label-input"
-        required
+        (onSelect)="onItemSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+        (onDeSelect)="onItemDeSelect($event)"
       >
-        <option [ngValue]="undefined" disabled selected>Labels</option>
-        <option *ngFor="let label of labels" value="{{label._id}}">{{label.name}}</option>
-      </select>
-      <div class="input-group-append">
-        <app-label-add (createdLabel)="newLabelToList($event)"></app-label-add>
+      </ng-multiselect-dropdown>
+      <app-label-add (createdLabel)="newLabelToList($event)"></app-label-add>
+      <div>
+        <i class="fas fa-check-circle" (click)="almostCompleted = true;"></i>
       </div>
     </div>
-
-
-    <!--start date-->
-    <div class="row col-md">
-      <label for="start-time-input">When will you work on this task?</label>
-    </div>
-    <div class="input-group row mb-3 col-md">
-      <input
-        class="form-control"
-        placeholder="{{activeTask.start_time | date: 'dd-MMM'}}"
-        name="dp"
-        [(ngModel)]="start_time"
-        ngbDatepicker #d="ngbDatepicker"
-        id="start-time-input"
-      >
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-          <i class="far fa-calendar-alt" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i>
-        </button>
-      </div>
-    </div>
-
-    <!--duration-->
-    <div class="row form-group mb-3 col-md">
-      <label for="duration-input">How many minutes will it take you?</label>
-      <input
-        [(ngModel)]="duration"
-        name="duration"
-        id="duration-input"
-        type="number"
-        class="form-control"
-        placeholder="{{activeTask.duration}}"
-        value="{{activeTask.duration}}"
-        aria-label=""
-        aria-describedby="basic-addon1">
-    </div>
-
-    <button type="submit" class="btn btn-dark btn-lg">Update Task</button>
   </form>
 </div>
+
 

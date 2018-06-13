@@ -1,0 +1,159 @@
+.task-enter {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.task-enter form {
+  grid-column: 1 / span 2;
+  width: 100%;
+}
+
+.edit-task-header {
+  grid-column: 1 / span 2;
+  width: 100%;
+  display: grid;
+}
+
+.time-date-picker {
+  display: grid;
+  width: 200px;
+}
+
+.datepicker {
+  grid-column: 1 / span 1;
+  width: 100%;
+}
+
+.datepicker input {
+  width: 100px;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.timepicker {
+  grid-column: 2 / span 1;
+  display: grid;
+  grid-template-columns: 5% 95%;
+}
+
+.timepicker div {
+  grid-column: 1 / span 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Segoe UI Symbol";
+  font-size: larger;
+
+}
+
+.timepicker input {
+  grid-column: 2 / span 1;
+  width: 100%;
+  border: none !important;
+  padding-left: 20px;
+}
+
+.close-popover-button {
+  grid-column: 3 / span 1;
+  text-align: right;
+}
+
+.close-popover-button i {
+  margin: 0 auto;
+  color: darkgray;
+  cursor: pointer;
+}
+
+.close-popover-button i:hover {
+  color: #dc3545;
+}
+
+
+#time-input {
+  margin: 0 auto;
+}
+
+#completed-header {
+  margin: 0 auto 10px;
+  max-width: 100%;
+  padding: 10px 10px 10px 65px;
+  text-align: center;
+}
+
+#completed-submit {
+  margin: 30px auto 0px 200px;
+  background-color: darkslategrey;
+}
+
+.complete-task div {
+  margin: 0 auto;
+}
+
+
+.task-description {
+  grid-column: 1 / span 2;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+  border: none !important;
+  width: 100%;
+  height: 300px;
+}
+
+.task-description-inactive {
+  height: 50px !important;
+  padding: 0;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.label-div {
+  grid-column: 1 / span 1;
+  grid-row: 4;
+  display: grid;
+  grid-template-columns: 30% 10% auto;
+  width: 100%;
+}
+
+.fa-check-circle {
+  padding-top: 15px;
+  color: darkgray;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.fa-check-circle:hover {
+  color: #28a745;
+}
+
+app-label-add {
+  padding-left: 20px;
+}
+
+ng-multiselect-dropdown {
+  padding: 2px;
+  margin: 5px;
+  background-color: #f3f3f3;
+  color: darkgray;
+  min-width: 75px;
+  width: auto;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.create-task-btn {
+  grid-column: 3 / span 1;
+  margin: 0 auto;
+}

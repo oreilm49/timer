@@ -1,1 +1,22 @@
+.fa-check-circle {
+  color: darkgray;
+  margin: 12px auto;
+  cursor: pointer;
+}
 
+.fa-check-circle:hover {
+  color: #28a745;
+}
+
+.mat-submit {
+
+}
+
+.popover-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.popover-full-width > * {
+  width: 100%;
+}

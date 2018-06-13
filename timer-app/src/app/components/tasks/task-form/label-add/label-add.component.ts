@@ -1,8 +1,8 @@
-import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, Input, ViewChild} from '@angular/core';
 import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 import {Renderer2} from "@angular/core";
 import {LabelService} from "../../../../services/label.service";
-import {NewLabelObject, LabelObject, ReturnedLabelObject, CreateLabelObject} from "../../../../objects";
+import {NewLabelObject, LabelObject, ReturnedLabelObject, CreateLabelObject, AddLabel} from "../../../../objects";
 import {AngularFireAuth} from "angularfire2/auth";
 
 @Component({
@@ -17,6 +17,7 @@ export class LabelAddComponent implements OnInit {
 
   labelName: string;
   userId: string;
+  @Input() task: string;
 
   constructor(config: NgbDropdownConfig,
               public renderer: Renderer2,
@@ -44,11 +45,26 @@ export class LabelAddComponent implements OnInit {
         name: this.labelName,
         user: this.userId,
       };
-      console.log('new label created: '+ this.labelName);
-      this.labelDrop.close();
       this.labelService.createLabel(label)
         .subscribe(val => {
+            console.log('new label created: '+ this.labelName);
+            this.labelDrop.close();
             this.createdLabel.emit(val);
+            if(this.task) {
+              let newLabelObj: AddLabel = {
+                task: this.task,
+                labels: [val._id]
+              };
+              this.labelService.taskToLabel(newLabelObj)
+                .subscribe(value => {
+                  console.log(`new label added to task: ${this.task}, label: ${value}`)
+                },
+                  error => {
+                  console.log(`error adding ${newLabelObj.labels[0]} to ${this.task} error: ${error}`)
+                  })
+            } else {
+              console.log("Couldn't add label to task: No task to add label to")
+            }
           },
           response => {
             console.log("POST call in error", response);
